@@ -10,9 +10,86 @@
 		24D84091A86090DD910327BB /* Pods_LZStudyingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5461A02D055AB1E163E147E2 /* Pods_LZStudyingProject.framework */; };
 		56CBDFF36EA2C73E0DCD9C24 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */; };
 		99DF09B4BEAFBFE1A76A2A0C /* Pods_LZStudyingProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA3C2BBB47E31A2D82BD541 /* Pods_LZStudyingProjectTests.framework */; };
+		A87EB1292A3AEAA5002D5B6C /* LZLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */; };
+		A87EB1362A3AEB08002D5B6C /* LZExpressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */; };
+		A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */; };
+		A87EB1392A3AEB08002D5B6C /* LZAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12F2A3AEB07002D5B6C /* LZAddressRequest.swift */; };
+		A87EB13A2A3AEB08002D5B6C /* LZGDAddressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1302A3AEB08002D5B6C /* LZGDAddressRequest.swift */; };
+		A87EB13B2A3AEB08002D5B6C /* LZOrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1312A3AEB08002D5B6C /* LZOrderRequest.swift */; };
+		A87EB13C2A3AEB08002D5B6C /* LZNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */; };
+		A87EB13D2A3AEB08002D5B6C /* LZPlayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */; };
+		A87EB1412A3AEBDE002D5B6C /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1402A3AEBDE002D5B6C /* ToastNotification.swift */; };
+		A87EB1432A3AEC01002D5B6C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */; };
+		A87EB1452A3AECA8002D5B6C /* UIStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1442A3AECA8002D5B6C /* UIStandard.swift */; };
+		A87EB1472A3AEDCD002D5B6C /* LZEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */; };
+		A87EB1492A3B0A84002D5B6C /* loginViewVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */; };
+		A87EB1592A3B11C9002D5B6C /* ComPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1582A3B11C9002D5B6C /* ComPoint.swift */; };
+		A8C4E8A02A3AC1E6001A53D6 /* LZSys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */; };
+		A8C4E8A82A3AC240001A53D6 /* LZSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */; };
+		A8C4E8A92A3AC240001A53D6 /* LZSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */; };
+		A8C4E8AA2A3AC240001A53D6 /* LZSettingSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A32A3AC240001A53D6 /* LZSettingSelectionViewController.swift */; };
+		A8C4E8AB2A3AC240001A53D6 /* LZSettingIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A42A3AC240001A53D6 /* LZSettingIconCell.swift */; };
+		A8C4E8AC2A3AC240001A53D6 /* LZSettingUserIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A52A3AC240001A53D6 /* LZSettingUserIconCell.swift */; };
+		A8C4E8AD2A3AC240001A53D6 /* LZSettingSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A62A3AC240001A53D6 /* LZSettingSelectionCell.swift */; };
+		A8C4E8AE2A3AC240001A53D6 /* LZSettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A72A3AC240001A53D6 /* LZSettingInfoViewController.swift */; };
+		A8C4E8B32A3AC505001A53D6 /* LZSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8AF2A3AC505001A53D6 /* LZSignUpViewController.swift */; };
+		A8C4E8B42A3AC505001A53D6 /* LZSignInBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8B02A3AC505001A53D6 /* LZSignInBtn.swift */; };
+		A8C4E8B52A3AC505001A53D6 /* LZResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8B12A3AC505001A53D6 /* LZResetPasswordViewController.swift */; };
+		A8C4E8B62A3AC505001A53D6 /* LZSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8B22A3AC505001A53D6 /* LZSignInViewController.swift */; };
+		A8C4E8BE2A3AD331001A53D6 /* LZUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8BD2A3AD331001A53D6 /* LZUser.swift */; };
+		A8C4E8C02A3AD389001A53D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8BF2A3AD389001A53D6 /* User.swift */; };
+		A8C4E8C72A3AD679001A53D6 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C12A3AD679001A53D6 /* Bill.swift */; };
+		A8C4E8C82A3AD679001A53D6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C22A3AD679001A53D6 /* Order.swift */; };
+		A8C4E8C92A3AD679001A53D6 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C32A3AD679001A53D6 /* Address.swift */; };
+		A8C4E8CA2A3AD679001A53D6 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C42A3AD679001A53D6 /* Option.swift */; };
+		A8C4E8CB2A3AD679001A53D6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C52A3AD679001A53D6 /* Player.swift */; };
+		A8C4E8CC2A3AD679001A53D6 /* Commodity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8C62A3AD679001A53D6 /* Commodity.swift */; };
+		A8C4E8CE2A3AD728001A53D6 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8CD2A3AD728001A53D6 /* Sex.swift */; };
+		A8C4E8D32A3AD7A3001A53D6 /* LZUserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8CF2A3AD7A2001A53D6 /* LZUserOrdersViewController.swift */; };
+		A8C4E8D42A3AD7A3001A53D6 /* LZUserOrderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8D02A3AD7A3001A53D6 /* LZUserOrderTableView.swift */; };
+		A8C4E8D52A3AD7A3001A53D6 /* LZUserOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8D12A3AD7A3001A53D6 /* LZUserOrderCell.swift */; };
+		A8C4E8DB2A3AD987001A53D6 /* CommodityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8DA2A3AD987001A53D6 /* CommodityState.swift */; };
+		A8C4E8DC2A3AD987001A53D6 /* ComCag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8D92A3AD987001A53D6 /* ComCag.swift */; };
+		A8C4E8DE2A3AD9C0001A53D6 /* LZBillingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8DD2A3AD9C0001A53D6 /* LZBillingView.swift */; };
+		A8C4E8F72A3ADA83001A53D6 /* LZQuantitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8DF2A3ADA82001A53D6 /* LZQuantitySelectorView.swift */; };
+		A8C4E8F82A3ADA83001A53D6 /* LZShoppingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E02A3ADA82001A53D6 /* LZShoppingCollectionView.swift */; };
+		A8C4E8F92A3ADA83001A53D6 /* LZComContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E12A3ADA82001A53D6 /* LZComContentViewController.swift */; };
+		A8C4E8FA2A3ADA83001A53D6 /* LZBillingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E22A3ADA83001A53D6 /* LZBillingViewController.swift */; };
+		A8C4E8FB2A3ADA83001A53D6 /* LZShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E32A3ADA83001A53D6 /* LZShoppingViewController.swift */; };
+		A8C4E8FC2A3ADA83001A53D6 /* LZConfigSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E42A3ADA83001A53D6 /* LZConfigSelectionViewController.swift */; };
+		A8C4E8FD2A3ADA83001A53D6 /* LZAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E52A3ADA83001A53D6 /* LZAddressView.swift */; };
+		A8C4E8FE2A3ADA83001A53D6 /* LZComBillingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E62A3ADA83001A53D6 /* LZComBillingCell.swift */; };
+		A8C4E8FF2A3ADA83001A53D6 /* LZComIntroContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E72A3ADA83001A53D6 /* LZComIntroContainerView.swift */; };
+		A8C4E9002A3ADA83001A53D6 /* LZAddressEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E82A3ADA83001A53D6 /* LZAddressEditingViewController.swift */; };
+		A8C4E9012A3ADA83001A53D6 /* LZBillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8E92A3ADA83001A53D6 /* LZBillTableViewController.swift */; };
+		A8C4E9022A3ADA83001A53D6 /* LZSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8EA2A3ADA83001A53D6 /* LZSelectionCollectionView.swift */; };
+		A8C4E9032A3ADA83001A53D6 /* LZOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8EB2A3ADA83001A53D6 /* LZOrderDetailViewController.swift */; };
+		A8C4E9042A3ADA83001A53D6 /* LZCommodityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8EC2A3ADA83001A53D6 /* LZCommodityCell.swift */; };
+		A8C4E9052A3ADA83001A53D6 /* LZPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8ED2A3ADA83001A53D6 /* LZPaymentView.swift */; };
+		A8C4E9062A3ADA83001A53D6 /* LZAddressManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8EE2A3ADA83001A53D6 /* LZAddressManagementViewController.swift */; };
+		A8C4E9072A3ADA83001A53D6 /* LZCagSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8EF2A3ADA83001A53D6 /* LZCagSelectionCell.swift */; };
+		A8C4E9082A3ADA83001A53D6 /* LZBillVCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F02A3ADA83001A53D6 /* LZBillVCView.swift */; };
+		A8C4E9092A3ADA83001A53D6 /* LZComImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F12A3ADA83001A53D6 /* LZComImagesView.swift */; };
+		A8C4E90A2A3ADA83001A53D6 /* LZCagCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F22A3ADA83001A53D6 /* LZCagCollectionViewLayout.swift */; };
+		A8C4E90B2A3ADA83001A53D6 /* LZAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F32A3ADA83001A53D6 /* LZAddressCell.swift */; };
+		A8C4E90C2A3ADA83001A53D6 /* LZDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F42A3ADA83001A53D6 /* LZDeliveryViewController.swift */; };
+		A8C4E90D2A3ADA83001A53D6 /* LZFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F52A3ADA83001A53D6 /* LZFilterView.swift */; };
+		A8C4E90E2A3ADA83001A53D6 /* LZFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8F62A3ADA83001A53D6 /* LZFlowLayout.swift */; };
+		A8C4E9122A3ADD97001A53D6 /* LZSettingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9112A3ADD97001A53D6 /* LZSettingKeys.swift */; };
+		A8C4E9212A3ADF10001A53D6 /* LZDataConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9202A3ADF10001A53D6 /* LZDataConvert.swift */; };
+		A8C4E9232A3ADFB3001A53D6 /* PayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9222A3ADFB3001A53D6 /* PayType.swift */; };
+		A8C4E92B2A3AE2D2001A53D6 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9242A3AE2D2001A53D6 /* DateFormatter.swift */; };
+		A8C4E92C2A3AE2D2001A53D6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9252A3AE2D2001A53D6 /* UIViewExtension.swift */; };
+		A8C4E92D2A3AE2D2001A53D6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9262A3AE2D2001A53D6 /* StringExtension.swift */; };
+		A8C4E92E2A3AE2D2001A53D6 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9272A3AE2D2001A53D6 /* BundleExtension.swift */; };
+		A8C4E92F2A3AE2D2001A53D6 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9282A3AE2D2001A53D6 /* DataExtension.swift */; };
+		A8C4E9302A3AE2D2001A53D6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9292A3AE2D2001A53D6 /* DoubleExtension.swift */; };
+		A8C4E9312A3AE2D2001A53D6 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E92A2A3AE2D2001A53D6 /* IntExtension.swift */; };
+		A8C4E9332A3AE338001A53D6 /* LZUDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9322A3AE338001A53D6 /* LZUDKeys.swift */; };
+		A8C4E9372A3AE514001A53D6 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9362A3AE514001A53D6 /* TabViewController.swift */; };
+		A8C4E9392A3AE570001A53D6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */; };
 		A8E604362A3165A900E75561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604352A3165A900E75561 /* AppDelegate.swift */; };
 		A8E604382A3165A900E75561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604372A3165A900E75561 /* SceneDelegate.swift */; };
-		A8E6043A2A3165A900E75561 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604392A3165A900E75561 /* ViewController.swift */; };
 		A8E6043F2A3165AD00E75561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8E6043E2A3165AD00E75561 /* Assets.xcassets */; };
 		A8E6044D2A3165AE00E75561 /* LZStudyingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6044C2A3165AE00E75561 /* LZStudyingProjectTests.swift */; };
 		A8E604572A3165AE00E75561 /* LZStudyingProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604562A3165AE00E75561 /* LZStudyingProjectUITests.swift */; };
@@ -44,10 +121,87 @@
 		8EAB5444C54C79BBC1890979 /* Pods-LZStudyingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject.debug.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject/Pods-LZStudyingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0E47578C1B92BBBEBC6CEA /* Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject-LZStudyingProjectUITests/Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LZStudyingProject_LZStudyingProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZLocationManager.swift; sourceTree = "<group>"; };
+		A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZExpressRequest.swift; sourceTree = "<group>"; };
+		A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCommodityRequest.swift; sourceTree = "<group>"; };
+		A87EB12F2A3AEB07002D5B6C /* LZAddressRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAddressRequest.swift; sourceTree = "<group>"; };
+		A87EB1302A3AEB08002D5B6C /* LZGDAddressRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZGDAddressRequest.swift; sourceTree = "<group>"; };
+		A87EB1312A3AEB08002D5B6C /* LZOrderRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZOrderRequest.swift; sourceTree = "<group>"; };
+		A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZNetWork.swift; sourceTree = "<group>"; };
+		A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZPlayerRequest.swift; sourceTree = "<group>"; };
+		A87EB1402A3AEBDE002D5B6C /* ToastNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotification.swift; sourceTree = "<group>"; };
+		A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		A87EB1442A3AECA8002D5B6C /* UIStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStandard.swift; sourceTree = "<group>"; };
+		A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZEventView.swift; sourceTree = "<group>"; };
+		A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = loginViewVideo.mov; path = "../../../Desktop/桌面 - Jason的MacBook Pro/loginViewVideo.mov"; sourceTree = "<group>"; };
+		A87EB1582A3B11C9002D5B6C /* ComPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPoint.swift; sourceTree = "<group>"; };
+		A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZSys.swift; sourceTree = "<group>"; };
+		A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingTableViewCell.swift; sourceTree = "<group>"; };
+		A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingViewController.swift; sourceTree = "<group>"; };
+		A8C4E8A32A3AC240001A53D6 /* LZSettingSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingSelectionViewController.swift; sourceTree = "<group>"; };
+		A8C4E8A42A3AC240001A53D6 /* LZSettingIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingIconCell.swift; sourceTree = "<group>"; };
+		A8C4E8A52A3AC240001A53D6 /* LZSettingUserIconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingUserIconCell.swift; sourceTree = "<group>"; };
+		A8C4E8A62A3AC240001A53D6 /* LZSettingSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingSelectionCell.swift; sourceTree = "<group>"; };
+		A8C4E8A72A3AC240001A53D6 /* LZSettingInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingInfoViewController.swift; sourceTree = "<group>"; };
+		A8C4E8AF2A3AC505001A53D6 /* LZSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSignUpViewController.swift; sourceTree = "<group>"; };
+		A8C4E8B02A3AC505001A53D6 /* LZSignInBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSignInBtn.swift; sourceTree = "<group>"; };
+		A8C4E8B12A3AC505001A53D6 /* LZResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZResetPasswordViewController.swift; sourceTree = "<group>"; };
+		A8C4E8B22A3AC505001A53D6 /* LZSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSignInViewController.swift; sourceTree = "<group>"; };
+		A8C4E8BD2A3AD331001A53D6 /* LZUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZUser.swift; sourceTree = "<group>"; };
+		A8C4E8BF2A3AD389001A53D6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8C4E8C12A3AD679001A53D6 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		A8C4E8C22A3AD679001A53D6 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A8C4E8C32A3AD679001A53D6 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A8C4E8C42A3AD679001A53D6 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		A8C4E8C52A3AD679001A53D6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A8C4E8C62A3AD679001A53D6 /* Commodity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commodity.swift; sourceTree = "<group>"; };
+		A8C4E8CD2A3AD728001A53D6 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
+		A8C4E8CF2A3AD7A2001A53D6 /* LZUserOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZUserOrdersViewController.swift; sourceTree = "<group>"; };
+		A8C4E8D02A3AD7A3001A53D6 /* LZUserOrderTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZUserOrderTableView.swift; sourceTree = "<group>"; };
+		A8C4E8D12A3AD7A3001A53D6 /* LZUserOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZUserOrderCell.swift; sourceTree = "<group>"; };
+		A8C4E8D92A3AD987001A53D6 /* ComCag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComCag.swift; sourceTree = "<group>"; };
+		A8C4E8DA2A3AD987001A53D6 /* CommodityState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommodityState.swift; sourceTree = "<group>"; };
+		A8C4E8DD2A3AD9C0001A53D6 /* LZBillingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZBillingView.swift; sourceTree = "<group>"; };
+		A8C4E8DF2A3ADA82001A53D6 /* LZQuantitySelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZQuantitySelectorView.swift; sourceTree = "<group>"; };
+		A8C4E8E02A3ADA82001A53D6 /* LZShoppingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZShoppingCollectionView.swift; sourceTree = "<group>"; };
+		A8C4E8E12A3ADA82001A53D6 /* LZComContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZComContentViewController.swift; sourceTree = "<group>"; };
+		A8C4E8E22A3ADA83001A53D6 /* LZBillingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZBillingViewController.swift; sourceTree = "<group>"; };
+		A8C4E8E32A3ADA83001A53D6 /* LZShoppingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZShoppingViewController.swift; sourceTree = "<group>"; };
+		A8C4E8E42A3ADA83001A53D6 /* LZConfigSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZConfigSelectionViewController.swift; sourceTree = "<group>"; };
+		A8C4E8E52A3ADA83001A53D6 /* LZAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAddressView.swift; sourceTree = "<group>"; };
+		A8C4E8E62A3ADA83001A53D6 /* LZComBillingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZComBillingCell.swift; sourceTree = "<group>"; };
+		A8C4E8E72A3ADA83001A53D6 /* LZComIntroContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZComIntroContainerView.swift; sourceTree = "<group>"; };
+		A8C4E8E82A3ADA83001A53D6 /* LZAddressEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAddressEditingViewController.swift; sourceTree = "<group>"; };
+		A8C4E8E92A3ADA83001A53D6 /* LZBillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZBillTableViewController.swift; sourceTree = "<group>"; };
+		A8C4E8EA2A3ADA83001A53D6 /* LZSelectionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSelectionCollectionView.swift; sourceTree = "<group>"; };
+		A8C4E8EB2A3ADA83001A53D6 /* LZOrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZOrderDetailViewController.swift; sourceTree = "<group>"; };
+		A8C4E8EC2A3ADA83001A53D6 /* LZCommodityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCommodityCell.swift; sourceTree = "<group>"; };
+		A8C4E8ED2A3ADA83001A53D6 /* LZPaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZPaymentView.swift; sourceTree = "<group>"; };
+		A8C4E8EE2A3ADA83001A53D6 /* LZAddressManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAddressManagementViewController.swift; sourceTree = "<group>"; };
+		A8C4E8EF2A3ADA83001A53D6 /* LZCagSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCagSelectionCell.swift; sourceTree = "<group>"; };
+		A8C4E8F02A3ADA83001A53D6 /* LZBillVCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZBillVCView.swift; sourceTree = "<group>"; };
+		A8C4E8F12A3ADA83001A53D6 /* LZComImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZComImagesView.swift; sourceTree = "<group>"; };
+		A8C4E8F22A3ADA83001A53D6 /* LZCagCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCagCollectionViewLayout.swift; sourceTree = "<group>"; };
+		A8C4E8F32A3ADA83001A53D6 /* LZAddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAddressCell.swift; sourceTree = "<group>"; };
+		A8C4E8F42A3ADA83001A53D6 /* LZDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZDeliveryViewController.swift; sourceTree = "<group>"; };
+		A8C4E8F52A3ADA83001A53D6 /* LZFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZFilterView.swift; sourceTree = "<group>"; };
+		A8C4E8F62A3ADA83001A53D6 /* LZFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZFlowLayout.swift; sourceTree = "<group>"; };
+		A8C4E9112A3ADD97001A53D6 /* LZSettingKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingKeys.swift; sourceTree = "<group>"; };
+		A8C4E9202A3ADF10001A53D6 /* LZDataConvert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZDataConvert.swift; sourceTree = "<group>"; };
+		A8C4E9222A3ADFB3001A53D6 /* PayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayType.swift; sourceTree = "<group>"; };
+		A8C4E9242A3AE2D2001A53D6 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		A8C4E9252A3AE2D2001A53D6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A8C4E9262A3AE2D2001A53D6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A8C4E9272A3AE2D2001A53D6 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		A8C4E9282A3AE2D2001A53D6 /* DataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		A8C4E9292A3AE2D2001A53D6 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		A8C4E92A2A3AE2D2001A53D6 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		A8C4E9322A3AE338001A53D6 /* LZUDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZUDKeys.swift; sourceTree = "<group>"; };
+		A8C4E9362A3AE514001A53D6 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		A8E604322A3165A900E75561 /* LZStudyingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZStudyingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E604352A3165A900E75561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E604372A3165A900E75561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A8E604392A3165A900E75561 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8E6043E2A3165AD00E75561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8E604432A3165AD00E75561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8E604482A3165AE00E75561 /* LZStudyingProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LZStudyingProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +264,151 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A87EB14A2A3B0C0C002D5B6C /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */,
+				A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */,
+				A87EB12F2A3AEB07002D5B6C /* LZAddressRequest.swift */,
+				A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */,
+				A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */,
+				A87EB1302A3AEB08002D5B6C /* LZGDAddressRequest.swift */,
+				A87EB1312A3AEB08002D5B6C /* LZOrderRequest.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		A87EB14B2A3B0C78002D5B6C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E9272A3AE2D2001A53D6 /* BundleExtension.swift */,
+				A8C4E9282A3AE2D2001A53D6 /* DataExtension.swift */,
+				A8C4E9242A3AE2D2001A53D6 /* DateFormatter.swift */,
+				A8C4E9292A3AE2D2001A53D6 /* DoubleExtension.swift */,
+				A8C4E92A2A3AE2D2001A53D6 /* IntExtension.swift */,
+				A8C4E9262A3AE2D2001A53D6 /* StringExtension.swift */,
+				A8C4E9252A3AE2D2001A53D6 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A87EB14C2A3B0C8E002D5B6C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A87EB1442A3AECA8002D5B6C /* UIStandard.swift */,
+				A8C4E9322A3AE338001A53D6 /* LZUDKeys.swift */,
+				A87EB1402A3AEBDE002D5B6C /* ToastNotification.swift */,
+				A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */,
+				A8C4E9202A3ADF10001A53D6 /* LZDataConvert.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A87EB14D2A3B0CF4002D5B6C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8DA2A3AD987001A53D6 /* CommodityState.swift */,
+				A8C4E8D92A3AD987001A53D6 /* ComCag.swift */,
+				A8C4E9222A3ADFB3001A53D6 /* PayType.swift */,
+				A8C4E9112A3ADD97001A53D6 /* LZSettingKeys.swift */,
+				A87EB1582A3B11C9002D5B6C /* ComPoint.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A87EB1522A3B0D33002D5B6C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8A42A3AC240001A53D6 /* LZSettingIconCell.swift */,
+				A8C4E8A72A3AC240001A53D6 /* LZSettingInfoViewController.swift */,
+				A8C4E8A62A3AC240001A53D6 /* LZSettingSelectionCell.swift */,
+				A8C4E8A32A3AC240001A53D6 /* LZSettingSelectionViewController.swift */,
+				A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */,
+				A8C4E8A52A3AC240001A53D6 /* LZSettingUserIconCell.swift */,
+				A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		A87EB1532A3B0D3C002D5B6C /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		A87EB1542A3B0D46002D5B6C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8EB2A3ADA83001A53D6 /* LZOrderDetailViewController.swift */,
+				A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */,
+				A8C4E8EC2A3ADA83001A53D6 /* LZCommodityCell.swift */,
+				A8C4E8F42A3ADA83001A53D6 /* LZDeliveryViewController.swift */,
+				A8C4E8D12A3AD7A3001A53D6 /* LZUserOrderCell.swift */,
+				A8C4E8CF2A3AD7A2001A53D6 /* LZUserOrdersViewController.swift */,
+				A8C4E8D02A3AD7A3001A53D6 /* LZUserOrderTableView.swift */,
+				A87EB1522A3B0D33002D5B6C /* Setting */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		A87EB1552A3B0D58002D5B6C /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8E62A3ADA83001A53D6 /* LZComBillingCell.swift */,
+				A8C4E8DD2A3AD9C0001A53D6 /* LZBillingView.swift */,
+				A8C4E8E22A3ADA83001A53D6 /* LZBillingViewController.swift */,
+				A8C4E8E92A3ADA83001A53D6 /* LZBillTableViewController.swift */,
+				A8C4E8F02A3ADA83001A53D6 /* LZBillVCView.swift */,
+				A8C4E8F22A3ADA83001A53D6 /* LZCagCollectionViewLayout.swift */,
+				A8C4E8EF2A3ADA83001A53D6 /* LZCagSelectionCell.swift */,
+				A8C4E8E12A3ADA82001A53D6 /* LZComContentViewController.swift */,
+				A8C4E8E72A3ADA83001A53D6 /* LZComIntroContainerView.swift */,
+				A8C4E8F52A3ADA83001A53D6 /* LZFilterView.swift */,
+				A8C4E8ED2A3ADA83001A53D6 /* LZPaymentView.swift */,
+				A8C4E8EA2A3ADA83001A53D6 /* LZSelectionCollectionView.swift */,
+				A8C4E8E02A3ADA82001A53D6 /* LZShoppingCollectionView.swift */,
+				A8C4E8E32A3ADA83001A53D6 /* LZShoppingViewController.swift */,
+				A8C4E8E42A3ADA83001A53D6 /* LZConfigSelectionViewController.swift */,
+				A8C4E8F12A3ADA83001A53D6 /* LZComImagesView.swift */,
+				A8C4E8F62A3ADA83001A53D6 /* LZFlowLayout.swift */,
+				A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */,
+				A8C4E8DF2A3ADA82001A53D6 /* LZQuantitySelectorView.swift */,
+				A8C4E8F32A3ADA83001A53D6 /* LZAddressCell.swift */,
+				A8C4E8E82A3ADA83001A53D6 /* LZAddressEditingViewController.swift */,
+				A8C4E8EE2A3ADA83001A53D6 /* LZAddressManagementViewController.swift */,
+				A8C4E8E52A3ADA83001A53D6 /* LZAddressView.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		A87EB1562A3B0EBB002D5B6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8BF2A3AD389001A53D6 /* User.swift */,
+				A8C4E8C32A3AD679001A53D6 /* Address.swift */,
+				A8C4E8C12A3AD679001A53D6 /* Bill.swift */,
+				A8C4E8C62A3AD679001A53D6 /* Commodity.swift */,
+				A8C4E8C42A3AD679001A53D6 /* Option.swift */,
+				A8C4E8C22A3AD679001A53D6 /* Order.swift */,
+				A8C4E8C52A3AD679001A53D6 /* Player.swift */,
+				A8C4E8CD2A3AD728001A53D6 /* Sex.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A87EB1572A3B0EFC002D5B6C /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				A8C4E8B12A3AC505001A53D6 /* LZResetPasswordViewController.swift */,
+				A8C4E8B02A3AC505001A53D6 /* LZSignInBtn.swift */,
+				A8C4E8B22A3AC505001A53D6 /* LZSignInViewController.swift */,
+				A8C4E8AF2A3AC505001A53D6 /* LZSignUpViewController.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
 		A8E604292A3165A900E75561 = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +436,20 @@
 			children = (
 				A8E604352A3165A900E75561 /* AppDelegate.swift */,
 				A8E604372A3165A900E75561 /* SceneDelegate.swift */,
-				A8E604392A3165A900E75561 /* ViewController.swift */,
+				A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */,
+				A8C4E9362A3AE514001A53D6 /* TabViewController.swift */,
+				A8C4E8BD2A3AD331001A53D6 /* LZUser.swift */,
+				A87EB1572A3B0EFC002D5B6C /* Sign */,
+				A87EB1552A3B0D58002D5B6C /* Shopping */,
+				A87EB1542A3B0D46002D5B6C /* Account */,
+				A87EB1532A3B0D3C002D5B6C /* Music */,
+				A87EB14D2A3B0CF4002D5B6C /* Enums */,
+				A87EB14C2A3B0C8E002D5B6C /* Common */,
+				A87EB14B2A3B0C78002D5B6C /* Extension */,
+				A87EB1562A3B0EBB002D5B6C /* Model */,
+				A87EB14A2A3B0C0C002D5B6C /* NetWork */,
 				A8E6043E2A3165AD00E75561 /* Assets.xcassets */,
+				A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */,
 				A8E604432A3165AD00E75561 /* Info.plist */,
 			);
 			path = LZStudyingProject;
@@ -271,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E6043F2A3165AD00E75561 /* Assets.xcassets in Resources */,
+				A87EB1492A3B0A84002D5B6C /* loginViewVideo.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,9 +710,85 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8E6043A2A3165A900E75561 /* ViewController.swift in Sources */,
+				A87EB1412A3AEBDE002D5B6C /* ToastNotification.swift in Sources */,
+				A87EB1292A3AEAA5002D5B6C /* LZLocationManager.swift in Sources */,
+				A8C4E9002A3ADA83001A53D6 /* LZAddressEditingViewController.swift in Sources */,
+				A87EB1362A3AEB08002D5B6C /* LZExpressRequest.swift in Sources */,
+				A8C4E9392A3AE570001A53D6 /* AccountViewController.swift in Sources */,
+				A8C4E8FF2A3ADA83001A53D6 /* LZComIntroContainerView.swift in Sources */,
+				A8C4E8AA2A3AC240001A53D6 /* LZSettingSelectionViewController.swift in Sources */,
+				A8C4E8BE2A3AD331001A53D6 /* LZUser.swift in Sources */,
+				A8C4E9332A3AE338001A53D6 /* LZUDKeys.swift in Sources */,
+				A8C4E9372A3AE514001A53D6 /* TabViewController.swift in Sources */,
+				A8C4E8AB2A3AC240001A53D6 /* LZSettingIconCell.swift in Sources */,
+				A87EB1472A3AEDCD002D5B6C /* LZEventView.swift in Sources */,
+				A8C4E8B52A3AC505001A53D6 /* LZResetPasswordViewController.swift in Sources */,
+				A8C4E9062A3ADA83001A53D6 /* LZAddressManagementViewController.swift in Sources */,
+				A8C4E8CB2A3AD679001A53D6 /* Player.swift in Sources */,
+				A8C4E8FA2A3ADA83001A53D6 /* LZBillingViewController.swift in Sources */,
+				A8C4E9092A3ADA83001A53D6 /* LZComImagesView.swift in Sources */,
+				A8C4E9082A3ADA83001A53D6 /* LZBillVCView.swift in Sources */,
+				A8C4E8C02A3AD389001A53D6 /* User.swift in Sources */,
+				A8C4E8C92A3AD679001A53D6 /* Address.swift in Sources */,
+				A87EB13A2A3AEB08002D5B6C /* LZGDAddressRequest.swift in Sources */,
+				A8C4E90E2A3ADA83001A53D6 /* LZFlowLayout.swift in Sources */,
+				A8C4E8F72A3ADA83001A53D6 /* LZQuantitySelectorView.swift in Sources */,
+				A8C4E8FE2A3ADA83001A53D6 /* LZComBillingCell.swift in Sources */,
+				A8C4E8B62A3AC505001A53D6 /* LZSignInViewController.swift in Sources */,
+				A8C4E9012A3ADA83001A53D6 /* LZBillTableViewController.swift in Sources */,
+				A87EB1452A3AECA8002D5B6C /* UIStandard.swift in Sources */,
 				A8E604362A3165A900E75561 /* AppDelegate.swift in Sources */,
+				A8C4E90A2A3ADA83001A53D6 /* LZCagCollectionViewLayout.swift in Sources */,
+				A8C4E8D42A3AD7A3001A53D6 /* LZUserOrderTableView.swift in Sources */,
+				A87EB13B2A3AEB08002D5B6C /* LZOrderRequest.swift in Sources */,
+				A8C4E9022A3ADA83001A53D6 /* LZSelectionCollectionView.swift in Sources */,
+				A8C4E8AE2A3AC240001A53D6 /* LZSettingInfoViewController.swift in Sources */,
+				A8C4E9312A3AE2D2001A53D6 /* IntExtension.swift in Sources */,
+				A8C4E9122A3ADD97001A53D6 /* LZSettingKeys.swift in Sources */,
+				A8C4E92C2A3AE2D2001A53D6 /* UIViewExtension.swift in Sources */,
+				A87EB13D2A3AEB08002D5B6C /* LZPlayerRequest.swift in Sources */,
+				A8C4E92B2A3AE2D2001A53D6 /* DateFormatter.swift in Sources */,
+				A8C4E8D32A3AD7A3001A53D6 /* LZUserOrdersViewController.swift in Sources */,
+				A8C4E8AC2A3AC240001A53D6 /* LZSettingUserIconCell.swift in Sources */,
+				A8C4E8A82A3AC240001A53D6 /* LZSettingTableViewCell.swift in Sources */,
+				A8C4E92F2A3AE2D2001A53D6 /* DataExtension.swift in Sources */,
+				A8C4E8DB2A3AD987001A53D6 /* CommodityState.swift in Sources */,
+				A87EB1592A3B11C9002D5B6C /* ComPoint.swift in Sources */,
+				A8C4E8D52A3AD7A3001A53D6 /* LZUserOrderCell.swift in Sources */,
+				A8C4E8B32A3AC505001A53D6 /* LZSignUpViewController.swift in Sources */,
+				A8C4E8CA2A3AD679001A53D6 /* Option.swift in Sources */,
+				A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */,
+				A8C4E8AD2A3AC240001A53D6 /* LZSettingSelectionCell.swift in Sources */,
+				A8C4E8DE2A3AD9C0001A53D6 /* LZBillingView.swift in Sources */,
+				A8C4E92E2A3AE2D2001A53D6 /* BundleExtension.swift in Sources */,
+				A8C4E8CE2A3AD728001A53D6 /* Sex.swift in Sources */,
+				A8C4E9042A3ADA83001A53D6 /* LZCommodityCell.swift in Sources */,
+				A8C4E8CC2A3AD679001A53D6 /* Commodity.swift in Sources */,
+				A87EB13C2A3AEB08002D5B6C /* LZNetWork.swift in Sources */,
+				A8C4E8FD2A3ADA83001A53D6 /* LZAddressView.swift in Sources */,
+				A8C4E8DC2A3AD987001A53D6 /* ComCag.swift in Sources */,
+				A8C4E8C82A3AD679001A53D6 /* Order.swift in Sources */,
 				A8E604382A3165A900E75561 /* SceneDelegate.swift in Sources */,
+				A8C4E8F92A3ADA83001A53D6 /* LZComContentViewController.swift in Sources */,
+				A8C4E90D2A3ADA83001A53D6 /* LZFilterView.swift in Sources */,
+				A8C4E90C2A3ADA83001A53D6 /* LZDeliveryViewController.swift in Sources */,
+				A8C4E8B42A3AC505001A53D6 /* LZSignInBtn.swift in Sources */,
+				A8C4E9232A3ADFB3001A53D6 /* PayType.swift in Sources */,
+				A8C4E9052A3ADA83001A53D6 /* LZPaymentView.swift in Sources */,
+				A8C4E8FC2A3ADA83001A53D6 /* LZConfigSelectionViewController.swift in Sources */,
+				A8C4E8A92A3AC240001A53D6 /* LZSettingViewController.swift in Sources */,
+				A8C4E9302A3AE2D2001A53D6 /* DoubleExtension.swift in Sources */,
+				A8C4E9212A3ADF10001A53D6 /* LZDataConvert.swift in Sources */,
+				A8C4E8F82A3ADA83001A53D6 /* LZShoppingCollectionView.swift in Sources */,
+				A8C4E9072A3ADA83001A53D6 /* LZCagSelectionCell.swift in Sources */,
+				A8C4E8A02A3AC1E6001A53D6 /* LZSys.swift in Sources */,
+				A8C4E9032A3ADA83001A53D6 /* LZOrderDetailViewController.swift in Sources */,
+				A87EB1432A3AEC01002D5B6C /* MusicViewController.swift in Sources */,
+				A8C4E90B2A3ADA83001A53D6 /* LZAddressCell.swift in Sources */,
+				A8C4E8C72A3AD679001A53D6 /* Bill.swift in Sources */,
+				A87EB1392A3AEB08002D5B6C /* LZAddressRequest.swift in Sources */,
+				A8C4E8FB2A3ADA83001A53D6 /* LZShoppingViewController.swift in Sources */,
+				A8C4E92D2A3AE2D2001A53D6 /* StringExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +954,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +983,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
