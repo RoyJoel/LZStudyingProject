@@ -55,8 +55,8 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
         return TextField
     }()
 
-    lazy var defaultSelectionView: LZServerView = {
-        let serveView = LZServerView()
+    lazy var defaultSelectionView: TMServerView = {
+        let serveView = TMServerView()
         return serveView
     }()
 
@@ -195,7 +195,7 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
             self.setupEvent(address: self.address)
         }
 
-        let defaultSelectionConfig = LZServeViewConfig(selectedImage: "circle.fill", unSelectedImage: "circle", selectedTitle: "默认地址", unselectedTitle: "默认地址")
+        let defaultSelectionConfig = TMServerViewConfig(selectedImage: "circle.fill", unSelectedImage: "circle", selectedTitle: "默认地址", unselectedTitle: "默认地址")
         defaultSelectionView.setup(isServing: false, config: defaultSelectionConfig)
         defaultSelectionView.addTapGesture(self, #selector(changeDefault))
         defaultSelectionView.isUserInteractionEnabled = true

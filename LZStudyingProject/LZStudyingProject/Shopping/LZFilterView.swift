@@ -13,7 +13,7 @@ class LZFilterView: TMView {
     let cagDS = cagFilterDataSource()
     let pointsDS = pointsFilterDataSource()
     var cagCurIndex: String = cagFilterDataSource().filterItems[0]
-    var pointsCurIndex: String = comPoint.none.displayName
+    var pointsCurIndex: String = ComPoint.none.displayName
     var completionHandler: (([Commodity]) -> Void)?
 
     lazy var filterBtn: UIButton = {
@@ -148,15 +148,15 @@ class LZFilterView: TMView {
             cagFilteredComs = LZUser.commodities.filter { $0.cag.displayName == selectedCag }
         }
 
-        if comPoint(displayName: selectedPoints).rawValue == 0 {
+        if ComPoint(displayName: selectedPoints).rawValue == 0 {
             pointFilteredComs = cagFilteredComs
-        } else if comPoint(displayName: selectedPoints).rawValue == 1 {
+        } else if ComPoint(displayName: selectedPoints).rawValue == 1 {
             pointFilteredComs = cagFilteredComs.filter { $0.options[0].price < 100 }
-        } else if comPoint(displayName: selectedPoints).rawValue == 2 {
+        } else if ComPoint(displayName: selectedPoints).rawValue == 2 {
             pointFilteredComs = cagFilteredComs.filter { $0.options[0].price >= 100 && $0.options[0].price < 500 }
-        } else if comPoint(displayName: selectedPoints).rawValue == 3 {
+        } else if ComPoint(displayName: selectedPoints).rawValue == 3 {
             pointFilteredComs = cagFilteredComs.filter { $0.options[0].price > 500 && $0.options[0].price < 1000 }
-        } else if comPoint(displayName: selectedPoints).rawValue == 4 {
+        } else if ComPoint(displayName: selectedPoints).rawValue == 4 {
             pointFilteredComs = cagFilteredComs.filter { $0.options[0].price > 1000 }
         }
         (completionHandler ?? { _ in })(pointFilteredComs)
@@ -171,7 +171,7 @@ class LZFilterView: TMView {
 }
 
 class pointsFilterDataSource: NSObject, UITableViewDataSource {
-    var filterItems = comPoint.allCases.compactMap { $0.displayName }
+    var filterItems = ComPoint.allCases.compactMap { $0.displayName }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         filterItems.count
