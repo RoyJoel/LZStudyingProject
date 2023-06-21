@@ -26,9 +26,6 @@ class LZShoppingCollectionView: UICollectionView, UICollectionViewDelegate, UICo
 
     func applyFilter(coms: [Commodity]) {
         self.coms = coms
-        if coms.count != 0 {
-            collectionViewLayout = LZFlowLayout(commodities: coms)
-        }
         reloadData()
     }
 

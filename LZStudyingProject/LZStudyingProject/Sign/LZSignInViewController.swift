@@ -93,12 +93,12 @@ class LZSignInViewController: AVPlayerViewController {
         }
         signInBtn.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 75, y: 530, width: 150, height: 150)
         signInBtn.setupView()
-        loginNameTextField.setup(with: TMTextFieldConfig(placeholderText: "Login Name"))
-        passwordTextField.setup(with: TMTextFieldConfig(placeholderText: "Password"))
+        loginNameTextField.textField.placeholder = "Login Name"
+        passwordTextField.textField.placeholder = "Password"
         let signUpBtnConfig = TMButtonConfig(title: "Newer? signup", action: #selector(signUpVCUp), actionTarget: self)
-        signUpBtn.setUp(with: signUpBtnConfig)
+        signUpBtn.setupEvent(config: signUpBtnConfig)
         let forgetPasswordBtnConfig = TMButtonConfig(title: "Forget passWord?", action: #selector(resetPasswordVCUp), actionTarget: self)
-        forgetPasswordBtn.setUp(with: forgetPasswordBtnConfig)
+        forgetPasswordBtn.setupEvent(config: forgetPasswordBtnConfig)
         // 设置 completion 回调
         signInBtn.completion = { [weak self] in
             guard let self = self else {

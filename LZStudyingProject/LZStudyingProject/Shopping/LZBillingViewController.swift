@@ -97,17 +97,17 @@ class LZBillingViewController: UIViewController {
         view.addSubview(confirmBtn)
 
         checkoutTitleView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(24)
+            make.left.equalToSuperview().offset(12)
             make.top.equalToSuperview().offset(48)
             make.width.equalTo(108)
             make.height.equalTo(30)
         }
 
         billView.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(24)
+            make.left.equalToSuperview().offset(12)
             make.top.equalTo(checkoutTitleView.snp.bottom).offset(12)
-            make.height.equalTo(126)
-            make.right.equalToSuperview().offset(-24)
+            make.height.equalTo(88)
+            make.right.equalToSuperview().offset(-12)
         }
         addressView.snp.makeConstraints { make in
             make.left.equalTo(billView.snp.left)
@@ -115,7 +115,7 @@ class LZBillingViewController: UIViewController {
             make.width.equalToSuperview().dividedBy(2).offset(-24)
             make.bottom.equalToSuperview().offset(-24)
         }
-        wayOfPayView.frame = CGRect(x: 208, y: 240, width: UIScreen.main.bounds.width - 232, height: 68)
+        wayOfPayView.frame = CGRect(x: 196, y: 240, width: UIScreen.main.bounds.width - 208, height: 68)
 
         totalLabel.snp.makeConstraints { make in
             make.left.equalTo(wayOfPayView.snp.left)

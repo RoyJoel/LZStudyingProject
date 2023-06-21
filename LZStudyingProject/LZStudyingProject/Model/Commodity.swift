@@ -36,6 +36,17 @@ struct Commodity: Codable, Equatable {
         cag = ComCag(rawValue: json["cag"].intValue) ?? .Accessories
         state = CommodityState(rawValue: json["state"].intValue) ?? .ToArrived
     }
+    
+    init?(dictionary: [String: Any]) {
+        guard let id = dictionary["id"] as? Int, let optiondits = dictionary["options"] as? [[String: Any]], let name = dictionary["name"] as? String, let intro = dictionary["intro"] as? String, let orders = dictionary["orders"] as? Int, let cag = dictionary["cag"] as? Int, let stateRawValue = dictionary["state"] as? Int else {
+            return nil
+        }
+
+        let options = optiondits.map { Option(dictionary: $0) ?? Option() }
+        let comcag = ComCag(rawValue: cag) ?? .Accessories
+        let state = CommodityState(rawValue: stateRawValue) ?? .ToArrived
+        self = Commodity(id: id, options: options, name: name, intro: intro, orders: orders, cag: comcag, state: state)
+    }
 
     init() {
         self = Commodity(json: JSON())
@@ -52,17 +63,6 @@ struct Commodity: Codable, Equatable {
             "state": state.rawValue,
         ]
         return dict
-    }
-
-    init?(dict: [String: Any]) {
-        guard let id = dict["id"] as? Int, let optiondits = dict["options"] as? [[String: Any]], let name = dict["name"] as? String, let intro = dict["intro"] as? String, let orders = dict["orders"] as? Int, let cag = dict["cag"] as? Int, let stateRawValue = dict["state"] as? Int else {
-            return nil
-        }
-
-        let options = optiondits.map { Option(dict: $0) ?? Option() }
-        let comcag = ComCag(rawValue: cag) ?? .Accessories
-        let state = CommodityState(rawValue: stateRawValue) ?? .ToArrived
-        self = Commodity(id: id, options: options, name: name, intro: intro, orders: orders, cag: comcag, state: state)
     }
 
     static func == (lhs: Commodity, rhs: Commodity) -> Bool {

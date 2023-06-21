@@ -39,11 +39,7 @@ struct Order: Codable, Equatable {
         completedTime = json["completedTime"].doubleValue
         state = OrderState(rawValue: json["state"].intValue) ?? .ToPay
     }
-
-    init() {
-        self = Order(json: JSON())
-    }
-
+    
     init?(dictionary: [String: Any]) {
         guard let id = dictionary["id"] as? Int,
             let billsArray = dictionary["bills"] as? [[String: Any]],
@@ -67,6 +63,10 @@ struct Order: Codable, Equatable {
         if let completedTime = dictionary["completedTime"] as? TimeInterval {
             self.completedTime = completedTime
         }
+    }
+
+    init() {
+        self = Order(json: JSON())
     }
 
     func toDictionary() -> [String: Any] {

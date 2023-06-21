@@ -110,18 +110,15 @@ class LZResetPasswordViewController: UIViewController {
             make.height.equalTo(50)
         }
         let reauthBtnConfig = TMButtonConfig(title: "Verification failed, tap to try again", action: #selector(authenticateUserTapped), actionTarget: self)
-        reauthBtn.setUp(with: reauthBtnConfig)
+        reauthBtn.setupEvent(config: reauthBtnConfig)
         accountLabel.text = NSLocalizedString("Account", comment: "")
-        let accountTFConfig = TMTextFieldConfig(placeholderText: "Enter account")
-        accountTextField.setup(with: accountTFConfig)
+        accountTextField.textField.placeholder = "Enter account"
         resetLabel.text = NSLocalizedString("Reset Password", comment: "")
-        let resetTFConfig = TMTextFieldConfig(placeholderText: "Reset Password")
-        resetTextField.setup(with: resetTFConfig)
+        resetTextField.textField.placeholder = "Reset Password"
         confirmLabel.text = NSLocalizedString("Confirm Password", comment: "")
-        let confirmTFConfig = TMTextFieldConfig(placeholderText: "Confirm Password")
-        confirmTextField.setup(with: confirmTFConfig)
+        confirmTextField.textField.placeholder = "Confirm Password"
         let submitBtnConfig = TMButtonConfig(title: "Submit", action: #selector(submitPassword), actionTarget: self)
-        submitBtn.setUp(with: submitBtnConfig)
+        submitBtn.setupEvent(config: submitBtnConfig)
 
         accountLabel.isHidden = true
         accountTextField.isHidden = true

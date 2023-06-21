@@ -43,6 +43,11 @@ class LZAddressView: UIView {
         let label = UILabel()
         return label
     }()
+    
+    lazy var alartView: UILabel = {
+        let label = UILabel()
+        return label
+    }()
 
     func setupUI() {
         backgroundColor = UIColor(named: "ComponentBackground")
@@ -54,6 +59,7 @@ class LZAddressView: UIView {
         addSubview(cityLabel)
         addSubview(areaLabel)
         addSubview(detailedAddressLabel)
+        addSubview(alartView)
 
         addressLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-12)
@@ -98,6 +104,10 @@ class LZAddressView: UIView {
             make.top.equalTo(areaLabel.snp.bottom)
             make.height.equalToSuperview().dividedBy(7).offset(-4)
         }
+        
+        alartView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
         addressLabel.text = "送货地址"
         nameAmdSexLabel.textAlignment = .right
@@ -109,15 +119,41 @@ class LZAddressView: UIView {
         addressLabel.textAlignment = .right
         detailedAddressLabel.numberOfLines = 2
         addTapGesture(self, #selector(editAddress))
+        addressLabel.isHidden = false
+        nameAmdSexLabel.isHidden = false
+        phoneNumberLabel.isHidden = false
+        provinceLabel.isHidden = false
+        cityLabel.isHidden = false
+        areaLabel.isHidden = false
+        detailedAddressLabel.isHidden = false
+        alartView.isHidden = true
+    }
+    
+    func setupAlart() {
+        addressLabel.isHidden = true
+        nameAmdSexLabel.isHidden = true
+        phoneNumberLabel.isHidden = true
+        provinceLabel.isHidden = true
+        cityLabel.isHidden = true
+        areaLabel.isHidden = true
+        detailedAddressLabel.isHidden = true
+        alartView.isHidden = false
+        alartView.text = NSLocalizedString("添加收货地址", comment: "")
+        alartView.font = UIFont.systemFont(ofSize: 22)
+        alartView.textAlignment = .center
     }
 
     func setupEvent(address: Address) {
-        nameAmdSexLabel.text = "\(address.name) \(address.sex == .Man ? "先生" : "女士")"
-        phoneNumberLabel.text = "\(address.phoneNumber)"
-        provinceLabel.text = "\(address.province)"
-        cityLabel.text = "\(address.city)"
-        areaLabel.text = "\(address.area)"
-        detailedAddressLabel.text = "\(address.detailedAddress)"
+        if address == Address() {
+            setupAlart()
+        }else {
+            nameAmdSexLabel.text = "\(address.name) \(address.sex == .Man ? "先生" : "女士")"
+            phoneNumberLabel.text = "\(address.phoneNumber)"
+            provinceLabel.text = "\(address.province)"
+            cityLabel.text = "\(address.city)"
+            areaLabel.text = "\(address.area)"
+            detailedAddressLabel.text = "\(address.detailedAddress)"
+        }
     }
 
     @objc func editAddress() {

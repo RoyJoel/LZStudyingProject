@@ -41,12 +41,12 @@ class LZUser {
     }
 
     static func signUp(completionHandler: @escaping (String?, Error?) -> Void) {
-        LZNetWork.post("/user/signUp", dataParameters: LZUser.user, responseBindingType: UserSignUpResponse.self) { response in
-            guard let res = response else {
+        LZNetWork.post("/user/signUp", dataParameters: LZUser.user) { json in
+            guard let json = json else {
                 completionHandler(nil, LZNetWorkError.netError("账号或密码错误"))
                 return
             }
-            LZUser.user = res.data.user
+            LZUser.user = User(json: json["data"]["user"])
             completionHandler(LZUser.user.token, nil)
         }
     }

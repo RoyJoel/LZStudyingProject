@@ -45,7 +45,6 @@ class LZSettingViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.register(LZSettingTableViewCell.self, forCellReuseIdentifier: "LZSettingTableViewCell")
         let signOutBtnConfig = TMButtonConfig(title: "Sign Out", action: #selector(signOut), actionTarget: self)
-        signOutBtn.setupUI()
         signOutBtn.setupEvent(config: signOutBtnConfig)
     }
 

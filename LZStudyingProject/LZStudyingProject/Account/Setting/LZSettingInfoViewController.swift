@@ -10,7 +10,7 @@ import TMComponent
 import UIKit
 
 class LZSettingInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var titleSettingConfig = ["Name", "Icon", "Sex", "Age", "YearsPlayed", "Height", "Width", "Grip", "Backhand"]
+    var titleSettingConfig = ["Name", "Icon", "Sex", "Age"]
     var infoSettingConfig = [LZUser.user.name, "", LZUser.user.sex.rawValue, "\(LZUser.user.age)"]
     let infoVC = LZSignUpViewController()
 
@@ -35,16 +35,14 @@ class LZSettingInfoViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LZSettingTableViewCell.self, forCellReuseIdentifier: "LZSettingTableViewCell")
-        let pngData = Data(base64Encoded: LZUser.user.icon)
-        infoVC.setUserInfo(name: LZUser.user.name, icon: pngData ?? Data(), sex: LZUser.user.sex, age: LZUser.user.age)
+        infoVC.setUserInfo(name: LZUser.user.name, icon: LZUser.user.icon.toPng(), sex: LZUser.user.sex, age: LZUser.user.age)
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 1 {
             let cell = LZSettingUserIconCell()
             let indexTitle = titleSettingConfig[indexPath.row]
-            let pngData = Data(base64Encoded: LZUser.user.icon)
-            cell.setupEvent(title: indexTitle, icon: pngData ?? Data())
+            cell.setupEvent(title: indexTitle, icon: LZUser.user.icon.toPng())
             cell.selectionStyle = .none
             return cell
         } else {

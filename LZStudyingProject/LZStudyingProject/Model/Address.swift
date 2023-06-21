@@ -58,6 +58,10 @@ struct Address: Codable, Equatable {
 
         self.init(id: id, name: name, sex: sex, phoneNumber: phoneNumber, province: province, city: city, area: area, detailedAddress: detailedAddress, isDefault: isDefault)
     }
+    
+    init() {
+        self = Address(json: JSON())
+    }
 
     func toDictionary() -> [String: Any] {
         return [
@@ -71,10 +75,6 @@ struct Address: Codable, Equatable {
             "detailedAddress": detailedAddress,
             "isDefault": isDefault,
         ]
-    }
-
-    init() {
-        self = Address(json: JSON())
     }
 
     static func == (lhs: Address, rhs: Address) -> Bool {

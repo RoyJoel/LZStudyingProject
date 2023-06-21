@@ -2,7 +2,7 @@
 //  Player.swift
 //  LZStudyingProject
 //
-//  Created by Jason Zhang on 2023/2/25.
+//  Created by Jason Zhang on 2023/6/25.
 //
 
 import Foundation
@@ -55,6 +55,10 @@ struct Player: Codable, Equatable {
 
         self.init(id: id, loginName: loginName, name: name, icon: icon, sex: sex, age: age, points: points, isAdult: isAdult)
     }
+    
+    init() {
+        self = Player(json: JSON())
+    }
 
     func toDictionary() -> [String: Any] {
         return [
@@ -67,10 +71,6 @@ struct Player: Codable, Equatable {
             "points": points,
             "isAdult": isAdult
         ]
-    }
-
-    init() {
-        self = Player(json: JSON())
     }
 
     static func == (lhs: Player, rhs: Player) -> Bool {

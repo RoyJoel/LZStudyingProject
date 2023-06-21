@@ -17,7 +17,6 @@ struct User: Codable, Equatable {
     var sex: Sex
     var age: Int
     var points: Int
-    var isAdult: Bool
     var friends: [Player]
     var allLikedMusic: [Int]
     var addresss: [Int]
@@ -26,7 +25,7 @@ struct User: Codable, Equatable {
     var defaultAddress: Address
     var token: String
 
-    init(id: Int, loginName: String, password: String, name: String, icon: String, sex: Sex, age: Int, points: Int, isAdult: Bool, friends: [Player], allLikedMusic: [Int], addresss: [Int], allOrders: [Int], cart: Int, defaultAddress: Address, token: String) {
+    init(id: Int, loginName: String, password: String, name: String, icon: String, sex: Sex, age: Int, points: Int, friends: [Player], allLikedMusic: [Int], addresss: [Int], allOrders: [Int], cart: Int, defaultAddress: Address, token: String) {
         self.id = id
         self.loginName = loginName
         self.password = password
@@ -35,7 +34,6 @@ struct User: Codable, Equatable {
         self.sex = sex
         self.age = age
         self.points = points
-        self.isAdult = isAdult
         self.friends = friends
         self.allLikedMusic = allLikedMusic
         self.addresss = addresss
@@ -54,7 +52,6 @@ struct User: Codable, Equatable {
         sex = Sex(rawValue: json["sex"].stringValue) ?? .Man
         age = json["age"].intValue
         points = json["points"].intValue
-        isAdult = json["isAdult"].boolValue
         friends = json["friends"].arrayValue.map { Player(json: $0) }
         allLikedMusic = json["allClubs"].arrayValue.map { $0.intValue }
         addresss = json["addresss"].arrayValue.map { $0.intValue }
@@ -62,6 +59,32 @@ struct User: Codable, Equatable {
         cart = json["cart"].intValue
         defaultAddress = Address(json: json["defaultAddress"])
         token = json["token"].stringValue
+    }
+    
+    init?(dictionary: [String: Any]) {
+        guard let id = dictionary["id"] as? Int,
+            let loginName = dictionary["loginName"] as? String,
+            let password = dictionary["password"] as? String,
+            let name = dictionary["name"] as? String,
+            let icon = dictionary["icon"] as? String,
+            let sexRawValue = dictionary["sex"] as? String,
+            let sex = Sex(rawValue: sexRawValue),
+            let age = dictionary["age"] as? Int,
+            let points = dictionary["points"] as? Int,
+            let friendsDictionaries = dictionary["friends"] as? [[String: Any]],
+            let allLikedMusic = dictionary["allLikeMusic"] as? [Int],
+            let addresssDictionaries = dictionary["addresss"] as? [Int],
+            let ordersDictionaries = dictionary["allOrders"] as? [Int],
+            let cartDictionaries = dictionary["cart"] as? Int,
+            let defaultAddressDictionaries = dictionary["defaultAddress"] as? [String: Any],
+            let token = dictionary["token"] as? String
+        else {
+            return nil
+        }
+        let friends = friendsDictionaries.compactMap { Player(dictionary: $0) }
+        let defaultAddress = Address(dictionary: defaultAddressDictionaries)
+
+        self = User(id: id, loginName: loginName, password: password, name: name, icon: icon, sex: sex, age: age, points: points, friends: friends, allLikedMusic: allLikedMusic, addresss: addresssDictionaries, allOrders: ordersDictionaries, cart: cartDictionaries, defaultAddress: defaultAddress ?? Address(), token: token)
     }
 
     init() {
@@ -78,7 +101,6 @@ struct User: Codable, Equatable {
             "sex": sex.rawValue,
             "age": age,
             "points": points,
-            "isAdult": isAdult,
             "friends": friends.map({ $0.toDictionary() }),
             "allLikedMusic": allLikedMusic,
             "addresss": addresss,
@@ -91,33 +113,6 @@ struct User: Codable, Equatable {
         return dict
     }
 
-    init?(dictionary: [String: Any]) {
-        guard let id = dictionary["id"] as? Int,
-            let loginName = dictionary["loginName"] as? String,
-            let password = dictionary["password"] as? String,
-            let name = dictionary["name"] as? String,
-            let icon = dictionary["icon"] as? String,
-            let sexRawValue = dictionary["sex"] as? String,
-            let sex = Sex(rawValue: sexRawValue),
-            let age = dictionary["age"] as? Int,
-            let points = dictionary["points"] as? Int,
-            let isAdult = dictionary["isAdult"] as? Bool,
-            let friendsDictionaries = dictionary["friends"] as? [[String: Any]],
-            let allLikedMusic = dictionary["allLikeMusic"] as? [Int],
-            let addresssDictionaries = dictionary["addresss"] as? [Int],
-            let ordersDictionaries = dictionary["allOrders"] as? [Int],
-            let cartDictionaries = dictionary["cart"] as? Int,
-            let defaultAddressDictionaries = dictionary["defaultAddress"] as? [String: Any],
-            let token = dictionary["token"] as? String
-        else {
-            return nil
-        }
-        let friends = friendsDictionaries.compactMap { Player(dictionary: $0) }
-        let defaultAddress = Address(dictionary: defaultAddressDictionaries)
-
-        self = User(id: id, loginName: loginName, password: password, name: name, icon: icon, sex: sex, age: age, points: points, isAdult: isAdult, friends: friends, allLikedMusic: allLikedMusic, addresss: addresssDictionaries, allOrders: ordersDictionaries, cart: cartDictionaries, defaultAddress: defaultAddress ?? Address(), token: token)
-    }
-
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id &&
             lhs.loginName == rhs.loginName &&
@@ -127,7 +122,6 @@ struct User: Codable, Equatable {
             lhs.sex == rhs.sex &&
             lhs.age == rhs.age &&
             lhs.points == rhs.points &&
-            lhs.isAdult == rhs.isAdult &&
             lhs.friends == rhs.friends &&
         lhs.allLikedMusic == rhs.allLikedMusic &&
             lhs.addresss == rhs.addresss && lhs.allOrders == rhs.allOrders && lhs.defaultAddress == rhs.defaultAddress && lhs.cart == rhs.cart

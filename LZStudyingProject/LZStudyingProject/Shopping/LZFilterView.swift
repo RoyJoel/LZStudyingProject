@@ -22,12 +22,12 @@ class LZFilterView: TMView {
     }()
 
     lazy var cagFilter: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
     lazy var pointsFilter: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
@@ -47,7 +47,7 @@ class LZFilterView: TMView {
 
         cagFilter.delegate = cagFilter
         cagFilter.dataSource = cagDS
-        cagFilter.setupUI()
+        cagFilter.setupSize()
         cagFilter.selectedCompletionHandler = { index in
             let selectedCag = self.cagDS.filterItems.remove(at: index)
             self.cagDS.filterItems.insert(selectedCag, at: 0)
@@ -56,7 +56,7 @@ class LZFilterView: TMView {
 
         pointsFilter.delegate = pointsFilter
         pointsFilter.dataSource = pointsDS
-        pointsFilter.setupUI()
+        pointsFilter.setupSize()
         pointsFilter.selectedCompletionHandler = { index in
             let selectedPoints = self.pointsDS.filterItems.remove(at: index)
             self.pointsDS.filterItems.insert(selectedPoints, at: 0)
@@ -179,7 +179,6 @@ class pointsFilterDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: filterItems[indexPath.row])
         cell.backgroundColor = UIColor(named: "ComponentBackground")
         return cell
@@ -195,7 +194,6 @@ class cagFilterDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: filterItems[indexPath.row])
         cell.backgroundColor = UIColor(named: "ComponentBackground")
         return cell

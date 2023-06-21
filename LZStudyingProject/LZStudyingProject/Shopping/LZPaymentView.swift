@@ -17,7 +17,7 @@ class LZPaymentView: UIView, UITableViewDataSource {
     }()
 
     lazy var paymentSelectionView: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
@@ -34,7 +34,7 @@ class LZPaymentView: UIView, UITableViewDataSource {
         titleView.font = UIFont.systemFont(ofSize: 15)
         paymentSelectionView.dataSource = self
         paymentSelectionView.delegate = paymentSelectionView
-        paymentSelectionView.setupUI()
+        paymentSelectionView.setupSize()
         paymentSelectionView.selectedCompletionHandler = { indexPath in
             let selectedPayment = self.paymentConfig.remove(at: indexPath)
             self.paymentConfig.insert(selectedPayment, at: 0)
@@ -52,7 +52,6 @@ class LZPaymentView: UIView, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: paymentConfig[indexPath.row])
         return cell
     }

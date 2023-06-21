@@ -2,7 +2,7 @@
 //  LZShoppingViewController.swift
 //  LZStudyingProject
 //
-//  Created by Jason Zhang on 2022/12/26.
+//  Created by Jason Zhang on 2023/6/26.
 //
 
 import Alamofire
@@ -87,7 +87,7 @@ class LZShoppingViewController: TMViewController {
         filter.setupUI()
         filter.clipsToBounds = false
 
-        titleView.text = "积分商城"
+        titleView.text = "会员商城"
         filter.completionHandler = { coms in
             self.shoppingCollectionView.applyFilter(coms: coms)
         }

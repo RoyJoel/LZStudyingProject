@@ -52,8 +52,7 @@ class LZDeliveryViewController: UIViewController, UITextFieldDelegate {
         }
 
         deliLabel.text = "请输入快递单号"
-        let textFieldConfig = TMTextFieldConfig(placeholderText: "请输入快递单号")
-        deliTextField.setup(with: textFieldConfig)
+        deliTextField.textField.placeholder = "请输入快递单号"
         confirmBtn.setTitle("确认", for: .normal)
         confirmBtn.setTitleColor(UIColor(named: "ContentBackground"), for: .normal)
         confirmBtn.addTarget(self, action: #selector(confirmToSend), for: .touchDown)

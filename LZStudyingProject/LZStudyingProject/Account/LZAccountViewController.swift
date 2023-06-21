@@ -1,8 +1,8 @@
 //
 //  AccountViewController.swift
-//  TennisMoment
+//  LZStudyingProject
 //
-//  Created by Jason Zhang on 2022/12/26.
+//  Created by Jason Zhang on 2023/6/26.
 //
 
 import Foundation
@@ -10,7 +10,7 @@ import SwiftyJSON
 import TMComponent
 import UIKit
 
-class AccountViewController: TMViewController {
+class LZAccountViewController: TMViewController {
     var points = 110
     var lastClockTime: TimeInterval = 1_685_701_396
     lazy var settingView: UIImageView = {
@@ -60,7 +60,6 @@ class AccountViewController: TMViewController {
         view.addSubview(userExpressOrderView)
         view.addSubview(pointRecordView)
 
-        iconView.setupUI()
         let iconConfig = TMIconViewConfig(icon: LZUser.user.icon.toPng(), name: LZUser.user.name)
         iconView.setupEvent(config: iconConfig)
         settingView.tintColor = UIColor(named: "ContentBackground")
@@ -110,13 +109,13 @@ class AccountViewController: TMViewController {
         settingView.addTapGesture(self, #selector(settingViewUp))
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: Notification.Name(ToastNotification.DataFreshToast.rawValue), object: nil)
 //        let userOrderConfig = TMButtonConfig(title: "快递订单", action: #selector(viewAllExpresses), actionTarget: self)
-//        userOrderView.setUp(with: userOrderConfig)
+//        userOrderView.setupEvent(config: userOrderConfig)
 
         let userEOrderConfig = TMButtonConfig(title: "积分商城订单", action: #selector(viewAllOrders), actionTarget: self)
-        userExpressOrderView.setUp(with: userEOrderConfig)
+        userExpressOrderView.setupEvent(config: userEOrderConfig)
 
 //        let pointRecordConfig = TMButtonConfig(title: "积分历史", action: #selector(viewAllPointRecord), actionTarget: self)
-//        pointRecordView.setUp(with: pointRecordConfig)
+//        pointRecordView.setupEvent(config: pointRecordConfig)
 
         pointLabel.text = "当前积分：\(points)"
         clockInBtn.setTitle("打卡", for: .normal)

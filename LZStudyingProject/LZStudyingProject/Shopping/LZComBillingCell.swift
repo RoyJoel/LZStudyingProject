@@ -61,27 +61,23 @@ class LZComBillingCell: UITableViewCell {
 
         nameView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
-            make.height.equalTo(50)
             make.left.equalTo(comIconView.snp.right).offset(6)
             make.right.equalToSuperview().offset(-12)
         }
 
         configLabel.snp.makeConstraints { make in
-            make.height.equalTo(46)
-            make.top.equalTo(nameView.snp.bottom).offset(6)
+            make.bottom.equalToSuperview().offset(-8)
             make.left.equalTo(comIconView.snp.right).offset(6)
             make.right.equalTo(priceLabel.snp.left).offset(-6)
         }
 
         quantityLabel.snp.makeConstraints { make in
             make.right.equalToSuperview().offset(-12)
-            make.top.equalTo(nameView.snp.bottom).offset(6)
             make.bottom.equalTo(configLabel.snp.bottom)
         }
 
         priceLabel.snp.makeConstraints { make in
             make.right.equalTo(quantityLabel.snp.left).offset(-6)
-            make.top.equalTo(nameView.snp.bottom).offset(6)
             make.bottom.equalTo(configLabel.snp.bottom)
         }
         comIconView.setCorner(radii: 10)

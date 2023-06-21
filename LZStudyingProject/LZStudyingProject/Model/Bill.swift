@@ -30,15 +30,19 @@ struct Bill: Codable, Equatable {
 
     init?(dictionary: [String: Any]) {
         guard let id = dictionary["id"] as? Int,
-            let comDict = dictionary["comId"] as? [String: Any], let com = Commodity(dict: comDict),
+            let comDict = dictionary["comId"] as? [String: Any], let com = Commodity(dictionary: comDict),
             let quantity = dictionary["quantity"] as? Int,
             let optionDict = dictionary["opinion"] as? [String: Any] else {
             return nil
         }
 
-        let option = Option(dict: optionDict) ?? Option()
+        let option = Option(dictionary: optionDict) ?? Option()
 
         self.init(id: id, com: com, quantity: quantity, option: option)
+    }
+    
+    init() {
+        self = Bill(json: JSON())
     }
 
     func toDictionary() -> [String: Any] {
@@ -48,10 +52,6 @@ struct Bill: Codable, Equatable {
             "quantity": quantity,
             "option": option,
         ]
-    }
-
-    init() {
-        self = Bill(json: JSON())
     }
 
     static func == (lhs: Bill, rhs: Bill) -> Bool {

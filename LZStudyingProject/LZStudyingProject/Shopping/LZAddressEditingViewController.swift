@@ -21,22 +21,22 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
     var addCompletionHandler: ((Address) -> Void)?
 
     lazy var sexSelectedView: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
     lazy var provinceSelectionView: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
     lazy var citySelectionView: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
     lazy var districtSelectionView: TMPopUpView = {
-        let view = TMPopUpView()
+        let view = TMPopUpView(frame: .zero, style: .plain)
         return view
     }()
 
@@ -125,17 +125,14 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
         nameTextField.textField.textAlignment = .center
         phoneNumberTextField.textField.textAlignment = .center
 
-        let nameConfig = TMTextFieldConfig(placeholderText: "Enter your name")
-        nameTextField.setup(with: nameConfig)
-        let phoneNumberConfig = TMTextFieldConfig(placeholderText: "enter your phone number")
-        phoneNumberTextField.setup(with: phoneNumberConfig)
-        let detailAddressConfig = TMTextFieldConfig(placeholderText: "detail address")
-        detailedAddressTextField.setup(with: detailAddressConfig)
+        nameTextField.textField.placeholder = "Enter your name"
+        phoneNumberTextField.textField.placeholder = "enter your phone number"
+        detailedAddressTextField.textField.placeholder = "detail address"
 
         sexSelectedView.dataSource = sexDs
+        sexSelectedView.setupSize()
         view.bringSubviewToFront(sexSelectedView)
         sexSelectedView.delegate = sexSelectedView
-        sexSelectedView.setupUI()
         sexSelectedView.selectedCompletionHandler = { index in
             let selectedSex = self.sexDs.sexConfig.remove(at: index)
             self.sexDs.sexConfig.insert(selectedSex, at: 0)
@@ -148,24 +145,24 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
             }
             self.provinceDs.provinces = res
             self.provinceSelectionView.dataSource = self.provinceDs
+            self.provinceSelectionView.setupSize()
             self.view.bringSubviewToFront(self.provinceSelectionView)
             self.provinceSelectionView.delegate = self.provinceSelectionView
             self.provinceSelectionView.reloadData()
-            self.provinceSelectionView.setupUI()
 
             self.cityDs.cities = self.provinceDs.provinces[0].districts ?? []
             self.citySelectionView.dataSource = self.cityDs
+            self.citySelectionView.setupSize()
             self.view.bringSubviewToFront(self.citySelectionView)
             self.citySelectionView.delegate = self.citySelectionView
             self.citySelectionView.reloadData()
-            self.citySelectionView.setupUI()
 
             self.districtDs.districts = self.cityDs.cities[0].districts ?? []
             self.districtSelectionView.dataSource = self.districtDs
+            self.districtSelectionView.setupSize()
             self.view.bringSubviewToFront(self.districtSelectionView)
             self.districtSelectionView.delegate = self.districtSelectionView
             self.districtSelectionView.reloadData()
-            self.districtSelectionView.setupUI()
 
             self.provinceSelectionView.selectedCompletionHandler = { index in
                 let selectedProvince = self.provinceDs.provinces.remove(at: index)
@@ -196,7 +193,7 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
         }
 
         let defaultSelectionConfig = TMServerViewConfig(selectedImage: "circle.fill", unSelectedImage: "circle", selectedTitle: "默认地址", unselectedTitle: "默认地址")
-        defaultSelectionView.setup(isServing: false, config: defaultSelectionConfig)
+        defaultSelectionView.setupEvent(isServing: false, config: defaultSelectionConfig)
         defaultSelectionView.addTapGesture(self, #selector(changeDefault))
         defaultSelectionView.isUserInteractionEnabled = true
         nameTextField.textField.delegate = self
@@ -237,9 +234,9 @@ class LZAddressEditingViewController: UIViewController, UITextFieldDelegate {
             districtSelectionView.reloadData()
         }
 
-        nameTextField.updateText(address.name)
-        phoneNumberTextField.updateText(address.phoneNumber)
-        detailedAddressTextField.updateText(address.detailedAddress)
+        nameTextField.textField.text = address.name
+        phoneNumberTextField.textField.text = address.phoneNumber
+        detailedAddressTextField.textField.text = address.detailedAddress
         isDefault = address.isDefault
         defaultSelectionView.changeStats(to: isDefault)
     }
@@ -290,7 +287,6 @@ class sexDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: sexConfig[indexPath.row] == .Man ? "先生" : "女士")
         return cell
     }
@@ -304,7 +300,6 @@ class provinceDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: provinces[indexPath.row].name)
         return cell
     }
@@ -318,7 +313,6 @@ class cityDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: cities[indexPath.row].name)
         return cell
     }
@@ -332,7 +326,6 @@ class districtDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TMPopUpCell()
-        cell.setupUI()
         cell.setupEvent(title: districts[indexPath.row].name)
         return cell
     }

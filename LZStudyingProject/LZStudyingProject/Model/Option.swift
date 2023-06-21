@@ -31,19 +31,19 @@ struct Option: Codable, Equatable {
         inventory = json["inventory"].intValue
     }
 
-    init() {
-        self = Option(json: JSON())
-    }
-
-    init?(dict: [String: Any]) {
-        guard let id = dict["id"] as? Int,
-            let image = dict["image"] as? String,
-            let intro = dict["intro"] as? String, let price = dict["price"] as? Double, let inventory = dict["inventory"] as? Int
+    init?(dictionary: [String: Any]) {
+        guard let id = dictionary["id"] as? Int,
+            let image = dictionary["image"] as? String,
+            let intro = dictionary["intro"] as? String, let price = dictionary["price"] as? Double, let inventory = dictionary["inventory"] as? Int
         else {
             return nil
         }
 
         self.init(id: id, image: image, intro: intro, price: price, inventory: inventory)
+    }
+    
+    init() {
+        self = Option(json: JSON())
     }
 
     func toDictionary() -> [String: Any] {

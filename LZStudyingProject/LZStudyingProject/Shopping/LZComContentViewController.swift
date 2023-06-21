@@ -96,7 +96,7 @@ class LZComContentViewController: UIViewController {
         }
 
         let btnConfig = TMButtonConfig(title: "选择款式", action: #selector(selectConfig), actionTarget: self)
-        buyBtn.setUp(with: btnConfig)
+        buyBtn.setupEvent(config: btnConfig)
         buyBtn.backgroundColor = UIColor(named: "TennisBlur")
         buyBtn.setTitleColor(.black, for: .normal)
     }

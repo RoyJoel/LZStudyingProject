@@ -19,7 +19,7 @@ class LZLocationManager: NSObject {
     func startPositioning(completionHandler: @escaping (CLLocation, String) -> Void) {
         if locationManager != nil, CLLocationManager.authorizationStatus() == .denied {
             // 定位提示
-            let alert = UIAlertController(title: "定位服务未开启", message: "请进入系统设置>隐私>定位服务中打开开关,并允许TennisMoment使用定位服务", preferredStyle: .alert)
+            let alert = UIAlertController(title: "定位服务未开启", message: "请进入系统设置>隐私>定位服务中打开开关,并允许LZStudyingProject使用定位服务", preferredStyle: .alert)
             let tempAction = UIAlertAction(title: "取消", style: .cancel) { _ in
             }
             let callAction = UIAlertAction(title: "前往设置", style: .default) { _ in

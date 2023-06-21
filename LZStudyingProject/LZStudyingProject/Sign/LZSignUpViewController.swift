@@ -52,31 +52,6 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
         return label
     }()
 
-    lazy var yearsPlayedTextField: TMTextField = {
-        let label = TMTextField()
-        return label
-    }()
-
-    lazy var heightTextField: TMTextField = {
-        let label = TMTextField()
-        return label
-    }()
-
-    lazy var widthTextField: TMTextField = {
-        let label = TMTextField()
-        return label
-    }()
-
-    lazy var gripTextField: TMPopUpView = {
-        let label = TMPopUpView()
-        return label
-    }()
-
-    lazy var backgroundTextField: TMPopUpView = {
-        let label = TMPopUpView()
-        return label
-    }()
-
     lazy var accountTextField: TMTextField = {
         let label = TMTextField()
         return label
@@ -106,26 +81,16 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
         view.addSubview(iconImageView)
         view.addSubview(sexTextField)
         view.addSubview(ageTextField)
-        view.addSubview(yearsPlayedTextField)
-        view.addSubview(heightTextField)
-        view.addSubview(widthTextField)
         view.addSubview(accountTextField)
         view.addSubview(passwordTextField)
         view.addSubview(nextConfigBtn)
         view.addSubview(lastConfigBtn)
-        view.addSubview(gripTextField)
-        view.addSubview(backgroundTextField)
 
         signInTitleView.isHidden = false
         nameTextField.isHidden = false
         iconImageView.isHidden = true
         sexTextField.isHidden = true
         ageTextField.isHidden = true
-        yearsPlayedTextField.isHidden = true
-        heightTextField.isHidden = true
-        widthTextField.isHidden = true
-        gripTextField.isHidden = true
-        backgroundTextField.isHidden = true
         accountTextField.isHidden = true
         passwordTextField.isHidden = true
 
@@ -165,26 +130,6 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
             make.width.equalTo(288)
             make.height.equalTo(50)
         }
-        yearsPlayedTextField.snp.makeConstraints { make in
-            make.top.equalTo(signInTitleView.snp.bottom).offset(68)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(288)
-            make.height.equalTo(50)
-        }
-        heightTextField.snp.makeConstraints { make in
-            make.top.equalTo(signInTitleView.snp.bottom).offset(68)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(288)
-            make.height.equalTo(50)
-        }
-        widthTextField.snp.makeConstraints { make in
-            make.top.equalTo(signInTitleView.snp.bottom).offset(68)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(288)
-            make.height.equalTo(50)
-        }
-        gripTextField.frame = CGRect(x: 208, y: 294, width: 288, height: 44)
-        backgroundTextField.frame = CGRect(x: 208, y: 294, width: 288, height: 44)
         accountTextField.snp.makeConstraints { make in
             make.top.equalTo(signInTitleView.snp.bottom).offset(68)
             make.centerX.equalToSuperview()
@@ -215,40 +160,28 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
         iconImageView.tag = 201
         sexTextField.tag = 202
         ageTextField.tag = 203
-        yearsPlayedTextField.tag = 204
-        heightTextField.tag = 205
-        widthTextField.tag = 206
-        gripTextField.tag = 207
-        backgroundTextField.tag = 208
-        accountTextField.tag = 209
-        passwordTextField.tag = 210
+        accountTextField.tag = 204
+        passwordTextField.tag = 205
 
         progressView.setCorner(radii: 8)
         progressView.progress = 0
         progressView.progressTintColor = UIColor(named: "BackgroundGray") // 已有进度颜色
         progressView.trackTintColor = .gray
         signInTitleView.text = configItems[currentIndex]
-        let nameConfig = TMTextFieldConfig(placeholderText: configItems[0])
-        nameTextField.setup(with: nameConfig)
+        nameTextField.textField.placeholder = configItems[0]
         iconImageView.image = UIImage(systemName: "camera")
         iconImageView.tintColor = UIColor(named: "ContentBackground")
         iconImageView.isUserInteractionEnabled = true
         imagePicker.delegate = self
         iconImageView.addTapGesture(self, #selector(changeIcon))
-        sexTextField.setupUI()
         sexTextField.setupEvent(config: TMServerViewConfig(selectedImage: "circle.fill", unSelectedImage: "circle", selectedTitle: "man", unselectedTitle: "woman"))
-        let ageConfig = TMTextFieldConfig(placeholderText: configItems[3])
-        ageTextField.setup(with: ageConfig)
-        backgroundTextField.setupUI()
-        let accountConfig = TMTextFieldConfig(placeholderText: configItems[9])
-        accountTextField.setup(with: accountConfig)
-        let passwordConfig = TMTextFieldConfig(placeholderText: configItems[10])
-        passwordTextField.setup(with: passwordConfig)
-        nextConfigBtn.setupUI()
+        ageTextField.textField.placeholder = configItems[3]
+        accountTextField.textField.placeholder = configItems[4]
+        passwordTextField.textField.placeholder = configItems[5]
         let nextBtnConfig = TMButtonConfig(title: "Next Step", action: #selector(stepForward), actionTarget: self)
-        nextConfigBtn.setUp(with: nextBtnConfig)
+        nextConfigBtn.setupEvent(config: nextBtnConfig)
         let lastBtnConfig = TMButtonConfig(title: "Back", action: #selector(stepBackward), actionTarget: self)
-        lastConfigBtn.setUp(with: lastBtnConfig)
+        lastConfigBtn.setupEvent(config: lastBtnConfig)
     }
 
     func showSubView(tag: Int) {
@@ -284,7 +217,6 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
         LZUser.user.sex = sexTextField.isLeft ? .Man : .Woman
         LZUser.user.age = Int(ageTextField.textField.text ?? "0") ?? 0
         LZUser.user.points = 0
-        LZUser.user.isAdult = (Int(ageTextField.textField.text ?? "0") ?? 0) > 18 ? true : false
     }
 
     func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {

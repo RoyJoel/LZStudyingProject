@@ -11,8 +11,8 @@ import UIKit
 
 class TabViewController: UITabBarController {
     let eventVC = LZShoppingViewController()
-    let accountVC = AccountViewController()
-    let expressVC = MusicViewController()
+    let accountVC = LZAccountViewController()
+    let expressVC = LZMusicViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +42,8 @@ class TabViewController: UITabBarController {
     }
 
     private func addViewController() {
-        setChildViewController(expressVC, NSLocalizedString("快递", comment: ""), "shippingbox")
-        setChildViewController(eventVC, NSLocalizedString("积分商城", comment: ""), "trophy")
+        setChildViewController(expressVC, NSLocalizedString("音乐", comment: ""), "shippingbox")
+        setChildViewController(eventVC, NSLocalizedString("会员商城", comment: ""), "trophy")
         setChildViewController(accountVC, NSLocalizedString("我的", comment: ""), "figure.tennis")
     }
 

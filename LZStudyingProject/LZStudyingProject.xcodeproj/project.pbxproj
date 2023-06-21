@@ -10,6 +10,10 @@
 		24D84091A86090DD910327BB /* Pods_LZStudyingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5461A02D055AB1E163E147E2 /* Pods_LZStudyingProject.framework */; };
 		56CBDFF36EA2C73E0DCD9C24 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */; };
 		99DF09B4BEAFBFE1A76A2A0C /* Pods_LZStudyingProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA3C2BBB47E31A2D82BD541 /* Pods_LZStudyingProjectTests.framework */; };
+		A8626EEE2A3FFE1A0089A1EC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EED2A3FFE1A0089A1EC /* Music.swift */; };
+		A8626EF02A4001350089A1EC /* AnimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EEF2A4001350089A1EC /* AnimeInfo.swift */; };
+		A8626EF22A404DCD0089A1EC /* LZMusicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */; };
+		A8626EF42A404E2B0089A1EC /* LZMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EF32A404E2B0089A1EC /* LZMusicCell.swift */; };
 		A87EB1292A3AEAA5002D5B6C /* LZLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */; };
 		A87EB1362A3AEB08002D5B6C /* LZExpressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */; };
 		A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */; };
@@ -19,7 +23,7 @@
 		A87EB13C2A3AEB08002D5B6C /* LZNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */; };
 		A87EB13D2A3AEB08002D5B6C /* LZPlayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */; };
 		A87EB1412A3AEBDE002D5B6C /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1402A3AEBDE002D5B6C /* ToastNotification.swift */; };
-		A87EB1432A3AEC01002D5B6C /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */; };
+		A87EB1432A3AEC01002D5B6C /* LZMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1422A3AEC01002D5B6C /* LZMusicViewController.swift */; };
 		A87EB1452A3AECA8002D5B6C /* UIStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1442A3AECA8002D5B6C /* UIStandard.swift */; };
 		A87EB1472A3AEDCD002D5B6C /* LZEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */; };
 		A87EB1492A3B0A84002D5B6C /* loginViewVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */; };
@@ -87,7 +91,7 @@
 		A8C4E9312A3AE2D2001A53D6 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E92A2A3AE2D2001A53D6 /* IntExtension.swift */; };
 		A8C4E9332A3AE338001A53D6 /* LZUDKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9322A3AE338001A53D6 /* LZUDKeys.swift */; };
 		A8C4E9372A3AE514001A53D6 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9362A3AE514001A53D6 /* TabViewController.swift */; };
-		A8C4E9392A3AE570001A53D6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */; };
+		A8C4E9392A3AE570001A53D6 /* LZAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E9382A3AE570001A53D6 /* LZAccountViewController.swift */; };
 		A8E604362A3165A900E75561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604352A3165A900E75561 /* AppDelegate.swift */; };
 		A8E604382A3165A900E75561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604372A3165A900E75561 /* SceneDelegate.swift */; };
 		A8E6043F2A3165AD00E75561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8E6043E2A3165AD00E75561 /* Assets.xcassets */; };
@@ -121,6 +125,10 @@
 		8EAB5444C54C79BBC1890979 /* Pods-LZStudyingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject.debug.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject/Pods-LZStudyingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0E47578C1B92BBBEBC6CEA /* Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject-LZStudyingProjectUITests/Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LZStudyingProject_LZStudyingProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8626EED2A3FFE1A0089A1EC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		A8626EEF2A4001350089A1EC /* AnimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeInfo.swift; sourceTree = "<group>"; };
+		A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZMusicRequest.swift; sourceTree = "<group>"; };
+		A8626EF32A404E2B0089A1EC /* LZMusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZMusicCell.swift; sourceTree = "<group>"; };
 		A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZLocationManager.swift; sourceTree = "<group>"; };
 		A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZExpressRequest.swift; sourceTree = "<group>"; };
 		A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCommodityRequest.swift; sourceTree = "<group>"; };
@@ -130,10 +138,10 @@
 		A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZNetWork.swift; sourceTree = "<group>"; };
 		A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZPlayerRequest.swift; sourceTree = "<group>"; };
 		A87EB1402A3AEBDE002D5B6C /* ToastNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotification.swift; sourceTree = "<group>"; };
-		A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		A87EB1422A3AEC01002D5B6C /* LZMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZMusicViewController.swift; sourceTree = "<group>"; };
 		A87EB1442A3AECA8002D5B6C /* UIStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStandard.swift; sourceTree = "<group>"; };
 		A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZEventView.swift; sourceTree = "<group>"; };
-		A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = loginViewVideo.mov; path = "../../../Desktop/桌面 - Jason的MacBook Pro/loginViewVideo.mov"; sourceTree = "<group>"; };
+		A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = loginViewVideo.mov; path = "../../../../../Desktop/桌面 - Jason的MacBook Pro/loginViewVideo.mov"; sourceTree = "<group>"; };
 		A87EB1582A3B11C9002D5B6C /* ComPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPoint.swift; sourceTree = "<group>"; };
 		A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZSys.swift; sourceTree = "<group>"; };
 		A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,7 +206,7 @@
 		A8C4E92A2A3AE2D2001A53D6 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		A8C4E9322A3AE338001A53D6 /* LZUDKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZUDKeys.swift; sourceTree = "<group>"; };
 		A8C4E9362A3AE514001A53D6 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A8C4E9382A3AE570001A53D6 /* LZAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZAccountViewController.swift; sourceTree = "<group>"; };
 		A8E604322A3165A900E75561 /* LZStudyingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZStudyingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E604352A3165A900E75561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E604372A3165A900E75561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */,
+				A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */,
 				A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */,
 				A87EB12F2A3AEB07002D5B6C /* LZAddressRequest.swift */,
 				A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */,
@@ -333,7 +342,8 @@
 		A87EB1532A3B0D3C002D5B6C /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				A87EB1422A3AEC01002D5B6C /* MusicViewController.swift */,
+				A87EB1422A3AEC01002D5B6C /* LZMusicViewController.swift */,
+				A8626EF32A404E2B0089A1EC /* LZMusicCell.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -342,7 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C4E8EB2A3ADA83001A53D6 /* LZOrderDetailViewController.swift */,
-				A8C4E9382A3AE570001A53D6 /* AccountViewController.swift */,
+				A8C4E9382A3AE570001A53D6 /* LZAccountViewController.swift */,
 				A8C4E8EC2A3ADA83001A53D6 /* LZCommodityCell.swift */,
 				A8C4E8F42A3ADA83001A53D6 /* LZDeliveryViewController.swift */,
 				A8C4E8D12A3AD7A3001A53D6 /* LZUserOrderCell.swift */,
@@ -393,6 +403,8 @@
 				A8C4E8C42A3AD679001A53D6 /* Option.swift */,
 				A8C4E8C22A3AD679001A53D6 /* Order.swift */,
 				A8C4E8C52A3AD679001A53D6 /* Player.swift */,
+				A8626EED2A3FFE1A0089A1EC /* Music.swift */,
+				A8626EEF2A4001350089A1EC /* AnimeInfo.swift */,
 				A8C4E8CD2A3AD728001A53D6 /* Sex.swift */,
 			);
 			path = Model;
@@ -711,12 +723,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A87EB1412A3AEBDE002D5B6C /* ToastNotification.swift in Sources */,
+				A8626EF22A404DCD0089A1EC /* LZMusicRequest.swift in Sources */,
 				A87EB1292A3AEAA5002D5B6C /* LZLocationManager.swift in Sources */,
 				A8C4E9002A3ADA83001A53D6 /* LZAddressEditingViewController.swift in Sources */,
 				A87EB1362A3AEB08002D5B6C /* LZExpressRequest.swift in Sources */,
-				A8C4E9392A3AE570001A53D6 /* AccountViewController.swift in Sources */,
+				A8C4E9392A3AE570001A53D6 /* LZAccountViewController.swift in Sources */,
 				A8C4E8FF2A3ADA83001A53D6 /* LZComIntroContainerView.swift in Sources */,
 				A8C4E8AA2A3AC240001A53D6 /* LZSettingSelectionViewController.swift in Sources */,
+				A8626EEE2A3FFE1A0089A1EC /* Music.swift in Sources */,
 				A8C4E8BE2A3AD331001A53D6 /* LZUser.swift in Sources */,
 				A8C4E9332A3AE338001A53D6 /* LZUDKeys.swift in Sources */,
 				A8C4E9372A3AE514001A53D6 /* TabViewController.swift in Sources */,
@@ -756,10 +770,12 @@
 				A87EB1592A3B11C9002D5B6C /* ComPoint.swift in Sources */,
 				A8C4E8D52A3AD7A3001A53D6 /* LZUserOrderCell.swift in Sources */,
 				A8C4E8B32A3AC505001A53D6 /* LZSignUpViewController.swift in Sources */,
+				A8626EF42A404E2B0089A1EC /* LZMusicCell.swift in Sources */,
 				A8C4E8CA2A3AD679001A53D6 /* Option.swift in Sources */,
 				A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */,
 				A8C4E8AD2A3AC240001A53D6 /* LZSettingSelectionCell.swift in Sources */,
 				A8C4E8DE2A3AD9C0001A53D6 /* LZBillingView.swift in Sources */,
+				A8626EF02A4001350089A1EC /* AnimeInfo.swift in Sources */,
 				A8C4E92E2A3AE2D2001A53D6 /* BundleExtension.swift in Sources */,
 				A8C4E8CE2A3AD728001A53D6 /* Sex.swift in Sources */,
 				A8C4E9042A3ADA83001A53D6 /* LZCommodityCell.swift in Sources */,
@@ -783,7 +799,7 @@
 				A8C4E9072A3ADA83001A53D6 /* LZCagSelectionCell.swift in Sources */,
 				A8C4E8A02A3AC1E6001A53D6 /* LZSys.swift in Sources */,
 				A8C4E9032A3ADA83001A53D6 /* LZOrderDetailViewController.swift in Sources */,
-				A87EB1432A3AEC01002D5B6C /* MusicViewController.swift in Sources */,
+				A87EB1432A3AEC01002D5B6C /* LZMusicViewController.swift in Sources */,
 				A8C4E90B2A3ADA83001A53D6 /* LZAddressCell.swift in Sources */,
 				A8C4E8C72A3AD679001A53D6 /* Bill.swift in Sources */,
 				A87EB1392A3AEB08002D5B6C /* LZAddressRequest.swift in Sources */,

@@ -2,7 +2,7 @@
 //  LZNetWork.swift
 //  LZStudyingProject
 //
-//  Created by Jason Zhang on 2023/2/28.
+//  Created by Jason Zhang on 2023/6/28.
 //
 
 import Alamofire
@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class LZNetWork {
-    static let LZURL = "http://169.254.228.10:8080"
+    static let LZURL = "http://localhost:8080"
 
     static func get(_ parameters: String, headers: HTTPHeaders? = nil, completionHandler: @escaping (JSON?, Error?) -> Void) {
         AF.request(URL(string: LZURL + parameters)!, headers: headers).response { response in

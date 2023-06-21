@@ -105,12 +105,12 @@ class LZConfigSelectionViewController: UIViewController {
         quantityView.setupUI(maximumQuantity: LZDataConvert.getTotalInventory(with: com.options))
 
         let buyBtnConfig = TMButtonConfig(title: "立即购买", action: #selector(addOrder), actionTarget: self)
-        buyBtn.setUp(with: buyBtnConfig)
+        buyBtn.setupEvent(config: buyBtnConfig)
         buyBtn.backgroundColor = UIColor(named: "TennisBlur")
         buyBtn.setTitleColor(.black, for: .normal)
 
         let cartBtnConfig = TMButtonConfig(title: "添加到购物车", action: #selector(addToCart), actionTarget: self)
-        addToCartBtn.setUp(with: cartBtnConfig)
+        addToCartBtn.setupEvent(config: cartBtnConfig)
         addToCartBtn.backgroundColor = UIColor(named: "TennisBlur")
         addToCartBtn.setTitleColor(.black, for: .normal)
     }
