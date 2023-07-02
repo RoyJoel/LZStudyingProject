@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 
 class LZMusicCell: UITableViewCell {
@@ -51,20 +52,28 @@ class LZMusicCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(iconView.snp.right).offset(6)
+            make.right.equalToSuperview().offset(-12)
             make.top.equalTo(iconView.snp.top)
         }
         
         subTitleLabel.snp.makeConstraints { make in
             make.left.equalTo(iconView.snp.right).offset(6)
-            make.bottom.equalTo(iconView.snp.bottom)
+            make.right.equalToSuperview().offset(-12)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
         }
+        iconView.setCorner(radii: 10)
+        iconView.contentMode = .scaleAspectFill
+        iconView.clipsToBounds = true
+        titleLabel.font = UIFont.systemFont(ofSize: 17)
+        titleLabel.tintColor = UIColor(named: "ContentBackground")
+        subTitleLabel.font = UIFont.systemFont(ofSize: 12)
+        subTitleLabel.tintColor = UIColor(named: "SubTitleTintColor")
     }
     
     
     func setupEvent(music: Music) {
-        iconView.image = UIImage(named: music.animeInfo.logo)
+        iconView.sd_setImage(with: URL(string: music.animeInfo.logo))
         titleLabel.text = music.animeInfo.title
-        subTitleLabel.text = music.author.unicodeScalars.map({ $0.value }).reduce("") { $0 + String( $1 ) }
-//        subTitleLabel.text = music.author.removingPercentEncoding
+        subTitleLabel.text = music.author
     }
 }

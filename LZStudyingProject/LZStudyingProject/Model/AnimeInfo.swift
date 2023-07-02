@@ -31,7 +31,7 @@ struct AnimeInfo: Codable, Equatable {
     
     init(json: JSON) {
         id = json["id"].stringValue
-        bg = json["play_url"].stringValue
+        bg = json["bg"].stringValue
         title = json["title"].stringValue
         year = json["year"].intValue
         month = json["month"].intValue

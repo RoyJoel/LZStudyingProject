@@ -354,7 +354,7 @@ class LZOrderDetailViewController: UIViewController {
             toastView.setCorner(radii: 15)
             self.view.showToast(toastView, duration: 1, point: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)) { _ in
                 (self.deleteCompletionHandler ?? {})()
-                NotificationCenter.default.post(name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
                 self.navigationController?.dismiss(animated: true)
             }
         }
@@ -378,7 +378,7 @@ class LZOrderDetailViewController: UIViewController {
             toastView.setCorner(radii: 15)
             self.view.showToast(toastView, duration: 1, point: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)) { _ in
                 (self.completionHandler ?? { _ in })(self.order)
-                NotificationCenter.default.post(name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
                 self.navigationController?.dismiss(animated: true)
             }
         }
@@ -400,7 +400,7 @@ class LZOrderDetailViewController: UIViewController {
                 self.view.showToast(toastView, duration: 1, point: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)) { _ in
                     self.addressView.setupEvent(address: address)
                     (self.completionHandler ?? { _ in })(self.order)
-                    NotificationCenter.default.post(name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
                     self.navigationController?.dismiss(animated: true)
                 }
             }
@@ -420,7 +420,7 @@ class LZOrderDetailViewController: UIViewController {
             toastView.setCorner(radii: 15)
             self.view.showToast(toastView, duration: 1, point: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)) { _ in
                 (self.completionHandler ?? { _ in })(self.order)
-                NotificationCenter.default.post(name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
                 self.navigationController?.dismiss(animated: true)
             }
         }
@@ -438,7 +438,7 @@ class LZOrderDetailViewController: UIViewController {
             toastView.setCorner(radii: 15)
             self.view.showToast(toastView, duration: 1, point: CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)) { _ in
                 (self.completionHandler ?? { _ in })(self.order)
-                NotificationCenter.default.post(name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
                 self.navigationController?.dismiss(animated: true)
             }
         }

@@ -127,7 +127,7 @@ class LZUserOrdersViewController: UIViewController {
         ordersReturnedTableView.dataSource = ordersReturnedDS
         ordersReturnedTableView.register(LZUserOrderCell.self, forCellReuseIdentifier: "ordersReturned")
         refreshData()
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshOrderData), name: Notification.Name(ToastNotification.refreshOrderData.rawValue), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshOrderData), name: Notification.Name(ToastNotification.RefreshOrderData.rawValue), object: nil)
     }
 
     func refreshData() {

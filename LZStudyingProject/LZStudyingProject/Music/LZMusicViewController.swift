@@ -8,6 +8,7 @@
 import Foundation
 import TMComponent
 import UIKit
+import AVFoundation
 
 class LZMusicViewController: UITableViewController {
     var music: [Music] = []
@@ -58,12 +59,29 @@ class LZMusicViewController: UITableViewController {
     }
 
     override func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return 118
+        return 68
     }
 
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = LZMusicCell()
         cell.setupEvent(music: music[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if URL(string: music[indexPath.row].playUrl) != nil {
+            let playList = Array(music[indexPath.row...])
+            NotificationCenter.default.post(name: Notification.Name(ToastNotification.PlayMusic.rawValue), object: nil, userInfo: ["PlayList": playList])
+        }else {
+            let toastView = UILabel()
+            toastView.text = NSLocalizedString("音乐信息失效", comment: "")
+            toastView.numberOfLines = 2
+            toastView.bounds = CGRect(x: 0, y: 0, width: 350, height: 150)
+            toastView.backgroundColor = UIColor(named: "ComponentBackground")
+            toastView.textAlignment = .center
+            toastView.setCorner(radii: 15)
+            self.view.showToast(toastView, point: CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2))
+        }
     }
 }

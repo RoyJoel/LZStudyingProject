@@ -1,5 +1,5 @@
 //
-//  TMImageView.swift
+//  TMRectImageView.swift
 //  TMComponent
 //
 //  Created by Jason Zhang on 2023/3/24.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-open class TMImageView: UIImageView {
+open class TMRectImageView: UIImageView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

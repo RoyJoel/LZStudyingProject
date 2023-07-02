@@ -10,10 +10,12 @@
 		24D84091A86090DD910327BB /* Pods_LZStudyingProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5461A02D055AB1E163E147E2 /* Pods_LZStudyingProject.framework */; };
 		56CBDFF36EA2C73E0DCD9C24 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */; };
 		99DF09B4BEAFBFE1A76A2A0C /* Pods_LZStudyingProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA3C2BBB47E31A2D82BD541 /* Pods_LZStudyingProjectTests.framework */; };
+		A807D6372A4830B400ED789F /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A807D6362A4830B400ED789F /* ControlView.swift */; };
 		A8626EEE2A3FFE1A0089A1EC /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EED2A3FFE1A0089A1EC /* Music.swift */; };
 		A8626EF02A4001350089A1EC /* AnimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EEF2A4001350089A1EC /* AnimeInfo.swift */; };
 		A8626EF22A404DCD0089A1EC /* LZMusicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */; };
 		A8626EF42A404E2B0089A1EC /* LZMusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8626EF32A404E2B0089A1EC /* LZMusicCell.swift */; };
+		A86D89C32A480A870082F318 /* MusicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86D89C22A480A870082F318 /* MusicDetailView.swift */; };
 		A87EB1292A3AEAA5002D5B6C /* LZLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */; };
 		A87EB1362A3AEB08002D5B6C /* LZExpressRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */; };
 		A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */; };
@@ -125,10 +127,12 @@
 		8EAB5444C54C79BBC1890979 /* Pods-LZStudyingProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject.debug.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject/Pods-LZStudyingProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0E47578C1B92BBBEBC6CEA /* Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject-LZStudyingProjectUITests/Pods-LZStudyingProject-LZStudyingProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D54E5E885E6E7ED077259A6 /* Pods_LZStudyingProject_LZStudyingProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LZStudyingProject_LZStudyingProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A807D6362A4830B400ED789F /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		A8626EED2A3FFE1A0089A1EC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		A8626EEF2A4001350089A1EC /* AnimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeInfo.swift; sourceTree = "<group>"; };
 		A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZMusicRequest.swift; sourceTree = "<group>"; };
 		A8626EF32A404E2B0089A1EC /* LZMusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZMusicCell.swift; sourceTree = "<group>"; };
+		A86D89C22A480A870082F318 /* MusicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetailView.swift; sourceTree = "<group>"; };
 		A87EB1282A3AEAA5002D5B6C /* LZLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZLocationManager.swift; sourceTree = "<group>"; };
 		A87EB12C2A3AEB07002D5B6C /* LZExpressRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZExpressRequest.swift; sourceTree = "<group>"; };
 		A87EB12D2A3AEB07002D5B6C /* LZCommodityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZCommodityRequest.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				A8E604372A3165A900E75561 /* SceneDelegate.swift */,
 				A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */,
 				A8C4E9362A3AE514001A53D6 /* TabViewController.swift */,
+				A86D89C22A480A870082F318 /* MusicDetailView.swift */,
+				A807D6362A4830B400ED789F /* ControlView.swift */,
 				A8C4E8BD2A3AD331001A53D6 /* LZUser.swift */,
 				A87EB1572A3B0EFC002D5B6C /* Sign */,
 				A87EB1552A3B0D58002D5B6C /* Shopping */,
@@ -756,6 +762,7 @@
 				A8C4E8D42A3AD7A3001A53D6 /* LZUserOrderTableView.swift in Sources */,
 				A87EB13B2A3AEB08002D5B6C /* LZOrderRequest.swift in Sources */,
 				A8C4E9022A3ADA83001A53D6 /* LZSelectionCollectionView.swift in Sources */,
+				A807D6372A4830B400ED789F /* ControlView.swift in Sources */,
 				A8C4E8AE2A3AC240001A53D6 /* LZSettingInfoViewController.swift in Sources */,
 				A8C4E9312A3AE2D2001A53D6 /* IntExtension.swift in Sources */,
 				A8C4E9122A3ADD97001A53D6 /* LZSettingKeys.swift in Sources */,
@@ -769,6 +776,7 @@
 				A8C4E8DB2A3AD987001A53D6 /* CommodityState.swift in Sources */,
 				A87EB1592A3B11C9002D5B6C /* ComPoint.swift in Sources */,
 				A8C4E8D52A3AD7A3001A53D6 /* LZUserOrderCell.swift in Sources */,
+				A86D89C32A480A870082F318 /* MusicDetailView.swift in Sources */,
 				A8C4E8B32A3AC505001A53D6 /* LZSignUpViewController.swift in Sources */,
 				A8626EF42A404E2B0089A1EC /* LZMusicCell.swift in Sources */,
 				A8C4E8CA2A3AD679001A53D6 /* Option.swift in Sources */,
