@@ -18,14 +18,14 @@ struct User: Codable, Equatable {
     var age: Int
     var points: Int
     var friends: [Player]
-    var allLikedMusic: [Int]
+    var allLikedMusic: [String]
     var addresss: [Int]
     var allOrders: [Int]
     var cart: Int
     var defaultAddress: Address
     var token: String
 
-    init(id: Int, loginName: String, password: String, name: String, icon: String, sex: Sex, age: Int, points: Int, friends: [Player], allLikedMusic: [Int], addresss: [Int], allOrders: [Int], cart: Int, defaultAddress: Address, token: String) {
+    init(id: Int, loginName: String, password: String, name: String, icon: String, sex: Sex, age: Int, points: Int, friends: [Player], allLikedMusic: [String], addresss: [Int], allOrders: [Int], cart: Int, defaultAddress: Address, token: String) {
         self.id = id
         self.loginName = loginName
         self.password = password
@@ -53,7 +53,7 @@ struct User: Codable, Equatable {
         age = json["age"].intValue
         points = json["points"].intValue
         friends = json["friends"].arrayValue.map { Player(json: $0) }
-        allLikedMusic = json["allClubs"].arrayValue.map { $0.intValue }
+        allLikedMusic = json["allLikedMusic"].arrayValue.map { $0.stringValue }
         addresss = json["addresss"].arrayValue.map { $0.intValue }
         allOrders = json["allOrders"].arrayValue.map { $0.intValue }
         cart = json["cart"].intValue
@@ -72,7 +72,7 @@ struct User: Codable, Equatable {
             let age = dictionary["age"] as? Int,
             let points = dictionary["points"] as? Int,
             let friendsDictionaries = dictionary["friends"] as? [[String: Any]],
-            let allLikedMusic = dictionary["allLikeMusic"] as? [Int],
+            let allLikedMusic = dictionary["allLikeMusic"] as? [String],
             let addresssDictionaries = dictionary["addresss"] as? [Int],
             let ordersDictionaries = dictionary["allOrders"] as? [Int],
             let cartDictionaries = dictionary["cart"] as? Int,

@@ -71,7 +71,8 @@ class LZMusicViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if URL(string: music[indexPath.row].playUrl) != nil {
-            let playList = Array(music[indexPath.row...])
+            let maxIndex = min(indexPath.row + 49, music.count - 1)
+            let playList = Array(music[indexPath.row...maxIndex])
             NotificationCenter.default.post(name: Notification.Name(ToastNotification.PlayMusic.rawValue), object: nil, userInfo: ["PlayList": playList])
         }else {
             let toastView = UILabel()

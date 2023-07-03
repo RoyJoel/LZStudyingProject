@@ -30,6 +30,7 @@
 		A87EB1472A3AEDCD002D5B6C /* LZEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */; };
 		A87EB1492A3B0A84002D5B6C /* loginViewVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */; };
 		A87EB1592A3B11C9002D5B6C /* ComPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87EB1582A3B11C9002D5B6C /* ComPoint.swift */; };
+		A88FA32B2A525DCA00CAF29A /* PlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88FA32A2A525DCA00CAF29A /* PlayMode.swift */; };
 		A8C4E8A02A3AC1E6001A53D6 /* LZSys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */; };
 		A8C4E8A82A3AC240001A53D6 /* LZSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */; };
 		A8C4E8A92A3AC240001A53D6 /* LZSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */; };
@@ -147,6 +148,7 @@
 		A87EB1462A3AEDCD002D5B6C /* LZEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZEventView.swift; sourceTree = "<group>"; };
 		A87EB1482A3B0A84002D5B6C /* loginViewVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = loginViewVideo.mov; path = "../../../../../Desktop/桌面 - Jason的MacBook Pro/loginViewVideo.mov"; sourceTree = "<group>"; };
 		A87EB1582A3B11C9002D5B6C /* ComPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPoint.swift; sourceTree = "<group>"; };
+		A88FA32A2A525DCA00CAF29A /* PlayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMode.swift; sourceTree = "<group>"; };
 		A8C4E89F2A3AC1E6001A53D6 /* LZSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZSys.swift; sourceTree = "<group>"; };
 		A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingTableViewCell.swift; sourceTree = "<group>"; };
 		A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZSettingViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				A8C4E9222A3ADFB3001A53D6 /* PayType.swift */,
 				A8C4E9112A3ADD97001A53D6 /* LZSettingKeys.swift */,
 				A87EB1582A3B11C9002D5B6C /* ComPoint.swift */,
+				A88FA32A2A525DCA00CAF29A /* PlayMode.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				A8C4E8B32A3AC505001A53D6 /* LZSignUpViewController.swift in Sources */,
 				A8626EF42A404E2B0089A1EC /* LZMusicCell.swift in Sources */,
 				A8C4E8CA2A3AD679001A53D6 /* Option.swift in Sources */,
+				A88FA32B2A525DCA00CAF29A /* PlayMode.swift in Sources */,
 				A87EB1372A3AEB08002D5B6C /* LZCommodityRequest.swift in Sources */,
 				A8C4E8AD2A3AC240001A53D6 /* LZSettingSelectionCell.swift in Sources */,
 				A8C4E8DE2A3AD9C0001A53D6 /* LZBillingView.swift in Sources */,

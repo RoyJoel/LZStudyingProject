@@ -28,4 +28,6 @@ enum LZUDKeys: String {
 
     // 离线状态下记录的比赛
     case LocalGames
+    // 播放模式
+    case PlayMode
 }
