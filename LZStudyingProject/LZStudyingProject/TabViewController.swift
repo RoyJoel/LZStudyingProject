@@ -98,8 +98,6 @@ class TabViewController: UITabBarController {
             return
         }
         playerView.setPlayList(playList)
-        playerView.setupPlayerView(music: playList[0])
-        playerView.playMusic()
         setupPlayerView()
     }
     

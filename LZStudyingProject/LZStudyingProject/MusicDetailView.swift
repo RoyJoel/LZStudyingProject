@@ -91,13 +91,13 @@ class MusicDetailView: TMView {
         willSet {
             self.playList = newValue
             currentMusicIndex = 0
+            playMusic()
         }
     }
     var currentMusicIndex: Int = 0 {
         willSet {
             self.currentMusicIndex = newValue
             setupPlayerView(music: playList[newValue])
-            playMusic()
         }
     }
     
@@ -128,8 +128,6 @@ class MusicDetailView: TMView {
     var playMode: PlayMode = .ListRepeating {
         willSet {
             switch newValue {
-            case .ListOrder:
-                playModeBtn.setImage(UIImage(systemName: "list.bullet.indent")?.withTintColor((UIColor(named: "ContentBackground") ?? .black), renderingMode: .alwaysOriginal), for: .normal)
             case .ListRepeating:
                 playModeBtn.setImage(UIImage(systemName: "repeat")?.withTintColor((UIColor(named: "ContentBackground") ?? .black), renderingMode: .alwaysOriginal), for: .normal)
             case .SingleRepeating:
@@ -252,6 +250,8 @@ class MusicDetailView: TMView {
             }
         }
         
+        controlView.lastBtn.addTarget(self, action: #selector(stepToLast), for: .touchDown)
+        controlView.nextBtn.addTarget(self, action: #selector(stepToNext), for: .touchDown)
         playListView.setup(playListView.bounds, playListView.layer.position, CGRect(x: 0, y: 0, width: UIStandard.shared.screenWidth / 2, height: 400), CGPoint(x: playListView.layer.position.x - (UIStandard.shared.screenWidth / 2 - 68) / 2, y: playListView.layer.position.y - 166), 0.3)
         playListView.register(LZMusicCell.self, forCellReuseIdentifier: "MusicCell")
         playListView.dataSource = self
@@ -268,6 +268,8 @@ class MusicDetailView: TMView {
         
         progressView.setCorner(radii: 10)
         progressView.progressTintColor = .gray
+        
+        progressView.addPanGesture(self, #selector(editProgress))
         
         iconView.setup(iconView.bounds, iconView.layer.position, CGRect(x: 0, y: 0, width: 232, height: 232), CGPoint(x: UIStandard.shared.screenWidth / 2, y: 248), 0.3)
         titleLabel.setup(titleLabel.bounds, titleLabel.layer.position, CGRect(x: 0, y: 0, width: UIStandard.shared.screenWidth - 72, height: 25), CGPoint(x: UIStandard.shared.screenWidth / 2, y: 498), 0.3)
@@ -340,38 +342,56 @@ class MusicDetailView: TMView {
         }
     }
     
+    @objc func stepToNext() {
+        switchSong(isForward: true)
+    }
+    
+    @objc func stepToLast() {
+        switchSong(isForward: false)
+    }
+    
+    @objc func editProgress(_ gesture: UIPanGestureRecognizer) {
+        setTimer(false)
+        let translation = gesture.translation(in: self)
+               let horizontalMovement = translation.x
+        let currentProgress = CGFloat(self.progressView.progress)
+        if gesture.state == .changed {
+            if horizontalMovement > 0 {
+                var movementPresent = horizontalMovement / progressView.frame.size.width
+                movementPresent += currentProgress
+                progressView.setProgress(Float(movementPresent), animated: true)
+                print(movementPresent)
+            }else {
+                var movementPresent = horizontalMovement / progressView.frame.size.width
+                movementPresent += currentProgress
+                progressView.setProgress(Float(movementPresent), animated: true)
+                print(movementPresent)
+            }
+            gesture.setTranslation(CGPoint.zero, in: progressView)
+        }
+        if gesture.state == .ended {
+            var movementPresent = horizontalMovement / progressView.frame.size.width
+            movementPresent += currentProgress
+            
+            let playPosition = (self.player.currentItem?.duration.seconds ?? 0) * movementPresent
+            player.seek(to: CMTime(seconds: playPosition, preferredTimescale: 1))
+            
+            if movementPresent == 1 {
+                switchSong(isForward: true)
+            }else {
+                self.setProgress(Float(movementPresent))
+            }
+            setTimer(true)
+        }
+    }
+    
     @objc func updateProgress() {
         guard self.player.currentItem?.duration.seconds != 0 else {
             return
         }
         let progress = Float(self.player.currentTime().seconds / (self.player.currentItem?.duration.seconds ?? 0))
         if progress == 1 {
-            let PlayMode = UserDefaults.standard.integer(forKey: LZUDKeys.PlayMode.rawValue)
-            switch PlayMode {
-            case 1:
-                setupPlayerView(music: playList[currentMusicIndex])
-                playMusic()
-            case 2:
-                guard playList.count > 1 else {
-                    currentMusicIndex = 0
-                    setupPlayerView(music: playList[currentMusicIndex])
-                    return
-                }
-                playList.remove(at: currentMusicIndex)
-                currentMusicIndex = Int(arc4random_uniform(UInt32(playList.count)))
-            case 3:
-                guard currentMusicIndex < playList.count - 1 else {
-                    setupPlayerView(music: playList[currentMusicIndex])
-                    return
-                }
-                currentMusicIndex += 1
-            default:
-                guard currentMusicIndex < playList.count - 1 else {
-                    currentMusicIndex = 0
-                    return
-                }
-                currentMusicIndex += 1
-            }
+            switchSong(isForward: true)
         }else {
             self.setProgress(progress)
         }
@@ -388,9 +408,42 @@ class MusicDetailView: TMView {
         case .SingleRepeating:
             self.playMode = .Random
         case .Random:
-            self.playMode = .ListOrder
-        case .ListOrder:
             self.playMode = .ListRepeating
+        }
+    }
+    
+    func switchSong(isForward: Bool) {
+        let PlayMode = UserDefaults.standard.integer(forKey: LZUDKeys.PlayMode.rawValue)
+        switch PlayMode {
+        case 1:
+            setupPlayerView(music: playList[currentMusicIndex])
+            playMusic()
+        case 2:
+            guard playList.count > 1 else {
+                currentMusicIndex = 0
+                return
+            }
+            playList.remove(at: currentMusicIndex)
+            currentMusicIndex = Int(arc4random_uniform(UInt32(playList.count)))
+            playMusic()
+        default:
+            if isForward {
+                guard currentMusicIndex < playList.count - 1 else {
+                    currentMusicIndex = 0
+                    playMusic()
+                    return
+                }
+                currentMusicIndex += 1
+                playMusic()
+            }else {
+                guard currentMusicIndex > 0 else {
+                    currentMusicIndex = playList.count - 1
+                    playMusic()
+                    return
+                }
+                currentMusicIndex -= 1
+                playMusic()
+            }
         }
     }
     
@@ -427,6 +480,16 @@ class MusicDetailView: TMView {
             titleLabel.scaleTo(isEnlarge)
             controlView.scaleTo(isEnlarge)
         }
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
+        if !CGRectContainsPoint(playListView.frame, point) && playListView.toggle{
+            playListView.scaleTo(playListView.toggle) {
+                self.playListView.isHidden = true
+            }
+        }
+        return super.hitTest(point, with: event)
     }
 }
 

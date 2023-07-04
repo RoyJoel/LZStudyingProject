@@ -2,7 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LZStudyingProject.xcodeproj">
+      location = "group:LZStudyingProject">
+   </FileRef>
+   <FileRef
+      location = "group:LZStudyingProject.xcworkspace">
+   </FileRef>
+   <FileRef
+      location = "group:LZStudyingProjectTests">
+   </FileRef>
+   <FileRef
+      location = "group:LZStudyingProjectUITests">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

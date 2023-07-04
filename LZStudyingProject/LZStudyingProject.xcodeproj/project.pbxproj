@@ -101,6 +101,11 @@
 		A8E6044D2A3165AE00E75561 /* LZStudyingProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E6044C2A3165AE00E75561 /* LZStudyingProjectTests.swift */; };
 		A8E604572A3165AE00E75561 /* LZStudyingProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604562A3165AE00E75561 /* LZStudyingProjectUITests.swift */; };
 		A8E604592A3165AE00E75561 /* LZStudyingProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E604582A3165AE00E75561 /* LZStudyingProjectUITestsLaunchTests.swift */; };
+		A8F697A02A53C797003125E4 /* LZCacheSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6979F2A53C797003125E4 /* LZCacheSettingViewController.swift */; };
+		A8F697A22A53C8C7003125E4 /* LZSettingToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F697A12A53C8C7003125E4 /* LZSettingToggleTableViewCell.swift */; };
+		A8F697B42A53D124003125E4 /* Localizable.en.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8F697B12A53D124003125E4 /* Localizable.en.strings */; };
+		A8F697B52A53D124003125E4 /* Localizable.cn.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8F697B22A53D124003125E4 /* Localizable.cn.strings */; };
+		A8F697B62A53D124003125E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8F697B32A53D124003125E4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +228,11 @@
 		A8E604522A3165AE00E75561 /* LZStudyingProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LZStudyingProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E604562A3165AE00E75561 /* LZStudyingProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZStudyingProjectUITests.swift; sourceTree = "<group>"; };
 		A8E604582A3165AE00E75561 /* LZStudyingProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZStudyingProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A8F6979F2A53C797003125E4 /* LZCacheSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZCacheSettingViewController.swift; sourceTree = "<group>"; };
+		A8F697A12A53C8C7003125E4 /* LZSettingToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZSettingToggleTableViewCell.swift; sourceTree = "<group>"; };
+		A8F697B12A53D124003125E4 /* Localizable.en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.en.strings; path = LZStudyingProject/Localizable.en.strings; sourceTree = SOURCE_ROOT; };
+		A8F697B22A53D124003125E4 /* Localizable.cn.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.cn.strings; path = LZStudyingProject/Localizable.cn.strings; sourceTree = SOURCE_ROOT; };
+		A8F697B32A53D124003125E4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = LZStudyingProject/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		D32CB2CFE1930DF82C4D741A /* Pods-LZStudyingProject-LZStudyingProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZStudyingProject-LZStudyingProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-LZStudyingProject-LZStudyingProjectUITests/Pods-LZStudyingProject-LZStudyingProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DAA3C2BBB47E31A2D82BD541 /* Pods_LZStudyingProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LZStudyingProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -281,6 +291,9 @@
 		A87EB14A2A3B0C0C002D5B6C /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				A8F697B22A53D124003125E4 /* Localizable.cn.strings */,
+				A8F697B12A53D124003125E4 /* Localizable.en.strings */,
+				A8F697B32A53D124003125E4 /* Localizable.strings */,
 				A87EB1332A3AEB08002D5B6C /* LZPlayerRequest.swift */,
 				A8626EF12A404DCD0089A1EC /* LZMusicRequest.swift */,
 				A87EB1322A3AEB08002D5B6C /* LZNetWork.swift */,
@@ -342,6 +355,8 @@
 				A8C4E8A12A3AC23F001A53D6 /* LZSettingTableViewCell.swift */,
 				A8C4E8A52A3AC240001A53D6 /* LZSettingUserIconCell.swift */,
 				A8C4E8A22A3AC240001A53D6 /* LZSettingViewController.swift */,
+				A8F697A12A53C8C7003125E4 /* LZSettingToggleTableViewCell.swift */,
+				A8F6979F2A53C797003125E4 /* LZCacheSettingViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -579,11 +594,12 @@
 			};
 			buildConfigurationList = A8E6042D2A3165A900E75561 /* Build configuration list for PBXProject "LZStudyingProject" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A8E604292A3165A900E75561;
 			productRefGroup = A8E604332A3165A900E75561 /* Products */;
@@ -602,8 +618,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F697B62A53D124003125E4 /* Localizable.strings in Resources */,
 				A8E6043F2A3165AD00E75561 /* Assets.xcassets in Resources */,
+				A8F697B42A53D124003125E4 /* Localizable.en.strings in Resources */,
 				A87EB1492A3B0A84002D5B6C /* loginViewVideo.mov in Resources */,
+				A8F697B52A53D124003125E4 /* Localizable.cn.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +812,7 @@
 				A8C4E9042A3ADA83001A53D6 /* LZCommodityCell.swift in Sources */,
 				A8C4E8CC2A3AD679001A53D6 /* Commodity.swift in Sources */,
 				A87EB13C2A3AEB08002D5B6C /* LZNetWork.swift in Sources */,
+				A8F697A22A53C8C7003125E4 /* LZSettingToggleTableViewCell.swift in Sources */,
 				A8C4E8FD2A3ADA83001A53D6 /* LZAddressView.swift in Sources */,
 				A8C4E8DC2A3AD987001A53D6 /* ComCag.swift in Sources */,
 				A8C4E8C82A3AD679001A53D6 /* Order.swift in Sources */,
@@ -807,6 +827,7 @@
 				A8C4E8A92A3AC240001A53D6 /* LZSettingViewController.swift in Sources */,
 				A8C4E9302A3AE2D2001A53D6 /* DoubleExtension.swift in Sources */,
 				A8C4E9212A3ADF10001A53D6 /* LZDataConvert.swift in Sources */,
+				A8F697A02A53C797003125E4 /* LZCacheSettingViewController.swift in Sources */,
 				A8C4E8F82A3ADA83001A53D6 /* LZShoppingCollectionView.swift in Sources */,
 				A8C4E9072A3ADA83001A53D6 /* LZCagSelectionCell.swift in Sources */,
 				A8C4E8A02A3AC1E6001A53D6 /* LZSys.swift in Sources */,

@@ -10,7 +10,7 @@ import TMComponent
 import UIKit
 
 class LZSettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var settingConfig = ["Appearance": [AppearanceSetting.Light.userDisplayName, AppearanceSetting.Dark.userDisplayName, AppearanceSetting.UnSpecified.userDisplayName], "Language": [LanguageSetting.Ch.userDisplayName, LanguageSetting.En.userDisplayName, LanguageSetting.Es.userDisplayName, LanguageSetting.De.userDisplayName, LanguageSetting.Fr.userDisplayName], "Info": [""]]
+    var settingConfig = ["Appearance": [AppearanceSetting.Light.userDisplayName, AppearanceSetting.Dark.userDisplayName, AppearanceSetting.UnSpecified.userDisplayName], "Language": [LanguageSetting.Ch.userDisplayName, LanguageSetting.En.userDisplayName, LanguageSetting.Es.userDisplayName, LanguageSetting.De.userDisplayName, LanguageSetting.Fr.userDisplayName], "听歌缓存": [], "Info": [""]]
     let tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -74,7 +74,12 @@ class LZSettingViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             cell.selectionStyle = .none
             return cell
-        } else {
+        } else if indexPath.row == 3 {
+            let cell = LZSettingTableViewCell()
+            cell.setupEvent(title: "听歌缓存", info: "")
+            cell.selectionStyle = .none
+            return cell
+        }else {
             let cell = LZSettingTableViewCell()
             cell.setupEvent(title: "Info", info: "")
             cell.selectionStyle = .none
@@ -97,6 +102,9 @@ class LZSettingViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
             }
             navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.row == 3 {
+            let vc = LZCacheSettingViewController()
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = LZSettingInfoViewController()
             vc.isModalInPresentation = true
@@ -113,7 +121,7 @@ class LZSettingViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        4
+        settingConfig.keys.count + 1
     }
 
     @objc func signOut() {

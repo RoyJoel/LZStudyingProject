@@ -30,4 +30,7 @@ enum LZUDKeys: String {
     case LocalGames
     // 播放模式
     case PlayMode
+    
+    // 听歌缓存
+    case SongCache
 }
