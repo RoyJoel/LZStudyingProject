@@ -1,6 +1,0 @@
-framework module Pods_LZStudyingProject {
-  umbrella header "Pods-LZStudyingProject-umbrella.h"
-
-  export *
-  module * { export * }
-}

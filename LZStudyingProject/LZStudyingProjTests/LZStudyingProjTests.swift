@@ -1,14 +1,14 @@
 //
-//  LZStudyingProjectTests.swift
-//  LZStudyingProjectTests
+//  LZStudyingProjTests.swift
+//  LZStudyingProjTests
 //
-//  Created by Jason Zhang on 2023/6/8.
+//  Created by Jason Zhang on 2023/7/4.
 //
 
 import XCTest
-@testable import LZStudyingProject
+@testable import LZStudyingProj
 
-final class LZStudyingProjectTests: XCTestCase {
+final class LZStudyingProjTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

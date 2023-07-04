@@ -36,15 +36,15 @@ open class TMView: UIView {
         if !isEnlarge {
             toggle.toggle()
             addAnimation(originalPoint, newPoint, duration, "position", completionHandler: {})
-            addAnimation(originalBounds, newBounds, duration, "bounds", completionHandler: {})
-            self.bounds = self.newBounds
-            self.layer.position = self.newPoint
+                       addAnimation(originalBounds, newBounds, duration, "bounds", completionHandler: {})
+            bounds = newBounds
+            layer.position = newPoint
         } else {
             toggle.toggle()
             addAnimation(newBounds, originalBounds, duration, "bounds", completionHandler: {})
-            addAnimation(newPoint, originalPoint, duration, "position", completionHandler: {})
-            self.bounds = self.originalBounds
-            self.layer.position = self.originalPoint
+             addAnimation(newPoint, originalPoint, duration, "position", completionHandler: {})
+            bounds = originalBounds
+            layer.position = originalPoint
         }
     }
     
@@ -55,16 +55,16 @@ open class TMView: UIView {
             addAnimation(originalBounds, newBounds, duration, "bounds", completionHandler: {
                 completionHandler()
             })
-            self.layer.position = self.newPoint
-            self.bounds = self.newBounds
+            bounds = newBounds
+            layer.position = newPoint
         } else {
             toggle.toggle()
             addAnimation(newBounds, originalBounds, duration, "bounds", completionHandler: {})
             addAnimation(newPoint, originalPoint, duration, "position", completionHandler: {
                 completionHandler()
             })
-            self.layer.position = self.originalPoint
-            self.bounds = self.originalBounds
+            bounds = originalBounds
+            layer.position = originalPoint
         }
     }
 

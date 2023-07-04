@@ -1,5 +1,5 @@
 //
-//  TMRectImageView.swift
+//  TMImageView.swift
 //  TMComponent
 //
 //  Created by Jason Zhang on 2023/3/24.

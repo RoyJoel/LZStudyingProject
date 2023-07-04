@@ -1,13 +1,13 @@
 //
-//  LZStudyingProjectUITestsLaunchTests.swift
-//  LZStudyingProjectUITests
+//  LZStudyingProjUITestsLaunchTests.swift
+//  LZStudyingProjUITests
 //
-//  Created by Jason Zhang on 2023/6/8.
+//  Created by Jason Zhang on 2023/7/4.
 //
 
 import XCTest
 
-final class LZStudyingProjectUITestsLaunchTests: XCTestCase {
+final class LZStudyingProjUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

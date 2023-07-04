@@ -1,0 +1,6 @@
+framework module Pods_LZStudyingProj_LZStudyingProjUITests {
+  umbrella header "Pods-LZStudyingProj-LZStudyingProjUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

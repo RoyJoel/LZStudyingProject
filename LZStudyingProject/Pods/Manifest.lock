@@ -24,7 +24,7 @@ DEPENDENCIES:
   - SwiftFormat/CLI (= 0.40.4)
   - SwiftyJSON
   - TABAnimated (= 2.5.1)
-  - TMComponent (from `https://github.com/RoyJoel/TMComponent.git`, tag `0.8.2`)
+  - TMComponent (from `https://github.com/RoyJoel/TMComponent.git`, tag `0.8.3`)
   - Toast-Swift
 
 SPEC REPOS:
@@ -43,12 +43,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   TMComponent:
     :git: https://github.com/RoyJoel/TMComponent.git
-    :tag: 0.8.2
+    :tag: 0.8.3
 
 CHECKOUT OPTIONS:
   TMComponent:
     :git: https://github.com/RoyJoel/TMComponent.git
-    :tag: 0.8.2
+    :tag: 0.8.3
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   TMComponent: 6b100f06dddd9ece8eee1eaa6ca16bc22ed5f5db
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 2ed5a72f0125c834dfb769c12fd0f43f4d2e085f
+PODFILE CHECKSUM: 8664986db1f9197ce0a22c3eeca17bfec89268e0
 
 COCOAPODS: 1.11.3

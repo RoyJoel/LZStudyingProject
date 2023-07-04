@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-LZStudyingProject-LZStudyingProjectUITests/Pods-LZStudyingProject-LZStudyingProjectUITests-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-LZStudyingProj/Pods-LZStudyingProj-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/JXSegmentedView/JXSegmentedView.framework
 ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
