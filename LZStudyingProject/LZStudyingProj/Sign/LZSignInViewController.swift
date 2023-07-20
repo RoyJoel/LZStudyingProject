@@ -39,7 +39,7 @@ class LZSignInViewController: AVPlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 创建 AVPlayer 对象
-        guard let videoURL = Bundle.main.url(forResource: "LZLoginVideo", withExtension: "mov") else {
+        guard let videoURL = Bundle.main.url(forResource: "lzloginvideo", withExtension: "mov") else {
             return
         }
         let player = AVPlayer(url: videoURL)

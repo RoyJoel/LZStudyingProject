@@ -11,7 +11,7 @@
 		A85C9DB02A56B829009A1000 /* LZUserLikedMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C9DAF2A56B829009A1000 /* LZUserLikedMusicViewController.swift */; };
 		A85C9DB22A579F5F009A1000 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C9DB12A579F5F009A1000 /* User.swift */; };
 		A85C9DB42A57A343009A1000 /* LZUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85C9DB32A57A343009A1000 /* LZUserRequest.swift */; };
-		A8818E2B2A697DD700064786 /* LZLoginVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = A8818E2A2A697DD700064786 /* LZLoginVideo.mov */; };
+		A8818E2B2A697DD700064786 /* lzloginvideo.MOV in Resources */ = {isa = PBXBuildFile; fileRef = A8818E2A2A697DD700064786 /* lzloginvideo.MOV */; };
 		A8F6986E2A541523003125E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6986D2A541523003125E4 /* AppDelegate.swift */; };
 		A8F698702A541523003125E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F6986F2A541523003125E4 /* SceneDelegate.swift */; };
 		A8F698852A541524003125E4 /* LZStudyingProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F698842A541524003125E4 /* LZStudyingProjTests.swift */; };
@@ -89,7 +89,7 @@
 		A85C9DAF2A56B829009A1000 /* LZUserLikedMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZUserLikedMusicViewController.swift; sourceTree = "<group>"; };
 		A85C9DB12A579F5F009A1000 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A85C9DB32A57A343009A1000 /* LZUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LZUserRequest.swift; sourceTree = "<group>"; };
-		A8818E2A2A697DD700064786 /* LZLoginVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = LZLoginVideo.mov; sourceTree = "<group>"; };
+		A8818E2A2A697DD700064786 /* lzloginvideo.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lzloginvideo.MOV; sourceTree = "<group>"; };
 		A8F6986A2A541523003125E4 /* LZStudyingProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZStudyingProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F6986D2A541523003125E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F6986F2A541523003125E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				A8F698F92A5416BC003125E4 /* Assets.xcassets */,
-				A8818E2A2A697DD700064786 /* LZLoginVideo.mov */,
+				A8818E2A2A697DD700064786 /* lzloginvideo.MOV */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8818E2B2A697DD700064786 /* LZLoginVideo.mov in Resources */,
+				A8818E2B2A697DD700064786 /* lzloginvideo.MOV in Resources */,
 				A8F699572A5416BC003125E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
