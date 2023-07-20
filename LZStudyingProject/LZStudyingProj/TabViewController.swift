@@ -11,10 +11,6 @@ import UIKit
 import AVFoundation
 
 class TabViewController: UITabBarController {
-    lazy var eventVC: LZShoppingViewController = {
-        let vc = LZShoppingViewController()
-        return vc
-    }()
     lazy var accountVC: LZAccountViewController = {
         let vc = LZAccountViewController()
         return vc
@@ -23,8 +19,8 @@ class TabViewController: UITabBarController {
         let vc = LZMusicViewController()
         return vc
     }()
-    lazy var playerView: MusicDetailView = {
-        let view = MusicDetailView()
+    lazy var playerView: LZMusicDetailView = {
+        let view = LZMusicDetailView()
         return view
     }()
     
@@ -79,14 +75,14 @@ class TabViewController: UITabBarController {
             if verticalMovement > 0 {
                 if playerView.toggle == true {
                     isPlayerViewScaled = false
-                    playerView.scaleTo(true) {
+                    playerView.scaleTo {
                         self.tabBar.isHidden = self.playerView.toggle
                     }
                 }
             }else {
                 if playerView.toggle == false {
                     isPlayerViewScaled = true
-                    playerView.scaleTo(false) { }
+                    playerView.scaleTo()
                     self.tabBar.isHidden = self.playerView.toggle
                 }
             }
@@ -106,7 +102,7 @@ class TabViewController: UITabBarController {
             playerView.addAnimation(CGPoint(x: playerView.layer.position.x, y: playerView.layer.position.y), CGPoint(x: playerView.layer.position.x, y: playerView.layer.position.y - tabBar.frame.size.height - 18), 0.3, "position")
             playerView.layer.position = CGPoint(x: playerView.layer.position.x, y: playerView.layer.position.y - tabBar.frame.size.height - 18)
             
-            playerView.setup(playerView.bounds, playerView.layer.position, UIScreen.main.bounds, CGPoint(x: UIStandard.shared.screenWidth / 2, y: UIStandard.shared.screenHeight / 2), 0.3)
+            playerView.setup(originalBounds: playerView.bounds, originalPoint: playerView.layer.position, newBounds: UIScreen.main.bounds, newPoint: CGPoint(x: UIStandard.shared.screenWidth / 2, y: UIStandard.shared.screenHeight / 2), duration: 0.3)
             playerView.addPanGesture(self, #selector(scalePlayerView(_:)))
         }
         
@@ -114,7 +110,6 @@ class TabViewController: UITabBarController {
 
     private func addViewController() {
         setChildViewController(expressVC, NSLocalizedString("音乐", comment: ""), "shippingbox")
-        setChildViewController(eventVC, NSLocalizedString("会员商城", comment: ""), "trophy")
         setChildViewController(accountVC, NSLocalizedString("我的", comment: ""), "figure.tennis")
     }
 

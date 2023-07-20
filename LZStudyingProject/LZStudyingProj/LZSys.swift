@@ -11,7 +11,9 @@ import TABAnimated
 
 class LZSys {
     var reachability: Reachability?
+    
     static let shard = LZSys()
+    
     private init() {}
 
     func initWindow() -> UIWindow {
@@ -38,7 +40,7 @@ class LZSys {
             reachability?.whenUnreachable = { _ in
                 if let userInfo = UserDefaults.standard.data(forKey: LZUDKeys.UserInfo.rawValue) {
                     do {
-                        LZUser.user = try PropertyListDecoder().decode(User.self, from: userInfo)
+                        LZUser.shared.user = try PropertyListDecoder().decode(User.self, from: userInfo)
                     } catch {
                         if let window = UIApplication.shared.windows.first {
                             window.rootViewController = LZSignInViewController()
@@ -70,7 +72,7 @@ class LZSys {
         } else {
             if let userInfo = UserDefaults.standard.data(forKey: LZUDKeys.UserInfo.rawValue) {
                 do {
-                    LZUser.user = try PropertyListDecoder().decode(User.self, from: userInfo)
+                    LZUser.shared.user = try PropertyListDecoder().decode(User.self, from: userInfo)
                     return TabViewController()
                 } catch {
                     return LZSignInViewController()
@@ -101,19 +103,21 @@ class LZSys {
         if let token = UserDefaults.standard.string(forKey: LZUDKeys.JSONWebToken.rawValue) {
             LZUser.auth(token: token) { userLoginName, userPassword, error in
                 guard error == nil else {
-                    if let window = UIApplication.shared.windows.first {
-                        let signInVC = LZSignInViewController()
-                        window.rootViewController = signInVC
-                        let toastView = UILabel()
-                        toastView.text = NSLocalizedString("The login information has expired\n please log in again", comment: "")
-                        toastView.numberOfLines = 2
-                        toastView.bounds = CGRect(x: 0, y: 0, width: 350, height: 150)
-                        toastView.backgroundColor = UIColor(named: "ComponentBackground")
-                        toastView.textAlignment = .center
-                        toastView.setCorner(radii: 15)
-                        (window.rootViewController as? LZSignInViewController)?.contentOverlayView?.showToast(toastView, duration: 1, point: CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)) { _ in
+                    let neterror = error as? LZNetWorkError
+                    switch neterror {
+                    case .AuthError(""):
+                        if let window = UIApplication.shared.windows.first {
+                            (window.rootViewController as? LZSignInViewController)?.contentOverlayView?.showToast(with: "登录信息过期，请重新登录")
+                            window.rootViewController = LZSignInViewController()
                         }
-                        window.rootViewController = LZSignInViewController()
+                    case .NetError(""):
+                        if let window = UIApplication.shared.windows.first {
+                            (window.rootViewController)?.view.showToast(with: "网络异常")
+                        }
+                    case .none:
+                        break
+                    case .some(_):
+                        break
                     }
                     return
                 }
@@ -123,21 +127,25 @@ class LZSys {
                 guard let userPassword = userPassword else {
                     return
                 }
-                LZUser.user.loginName = userLoginName
-                LZUser.user.password = userPassword
-                LZUser.signIn { user, error in
+                LZUser.shared.user.loginName = userLoginName
+                LZUser.shared.user.password = userPassword
+                LZUserRequest.signIn { user, error in
                     guard error == nil else {
-                        if let window = UIApplication.shared.windows.first {
-                            let toastView = UILabel()
-                            toastView.text = NSLocalizedString("No such loginname or password", comment: "")
-                            toastView.numberOfLines = 2
-                            toastView.bounds = CGRect(x: 0, y: 0, width: 350, height: 150)
-                            toastView.backgroundColor = UIColor(named: "ComponentBackground")
-                            toastView.textAlignment = .center
-                            toastView.setCorner(radii: 15)
-                            (window.rootViewController as? LZSignInViewController)?.contentOverlayView?.showToast(toastView, duration: 1, point: CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)) { _ in
+                        let neterror = error as? LZNetWorkError
+                        switch neterror {
+                        case .AuthError(""):
+                            if let window = UIApplication.shared.windows.first {
+                                (window.rootViewController as? LZSignInViewController)?.contentOverlayView?.showToast(with: "登录信息过期，请重新登录")
+                                window.rootViewController = LZSignInViewController()
                             }
-                            window.rootViewController = LZSignInViewController()
+                        case .NetError(""):
+                            if let window = UIApplication.shared.windows.first {
+                                (window.rootViewController)?.view.showToast(with: "网络异常")
+                            }
+                        case .none:
+                            break
+                        case .some(_):
+                            break
                         }
                         return
                     }
