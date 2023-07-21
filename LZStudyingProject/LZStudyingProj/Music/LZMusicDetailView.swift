@@ -106,7 +106,11 @@ class LZMusicDetailView: TMScalableView {
     var isLiked: Bool = false {
         willSet {
             if newValue {
-                LZMusicRequest.likeThisSong(musicId: music?.id ?? "") { _ in
+                LZMusicRequest.likeThisSong(musicId: music?.id ?? "") { [weak self] _ in
+                    guard let self = self else {
+                        return
+                    }
+                    
                     let likedBtnConfig = TMButtonConfig(image: UIImage(systemName: "heart.fill")?.withTintColor((UIColor(named: "ContentBackground") ?? .black), renderingMode: .alwaysOriginal), action: #selector(self.likeThisSong), actionTarget: self)
                     self.likedBtn.setupEvent(config: likedBtnConfig)
                     guard !LZUser.shared.user.allLikedMusic.contains(where: { $0 == self.music?.id }) else {
@@ -115,7 +119,11 @@ class LZMusicDetailView: TMScalableView {
                     LZUser.shared.user.allLikedMusic.append(self.music?.id ?? "")
                 }
             }else {
-                LZMusicRequest.dislikeThisSong(musicId: music?.id ?? "") { _ in
+                LZMusicRequest.dislikeThisSong(musicId: music?.id ?? "") { [weak self] _ in
+                    guard let self = self else {
+                        return
+                    }
+                    
                     let likedBtnConfig = TMButtonConfig(image: UIImage(systemName: "heart")?.withTintColor((UIColor(named: "ContentBackground") ?? .black), renderingMode: .alwaysOriginal), action: #selector(self.likeThisSong), actionTarget: self)
                     self.likedBtn.setupEvent(config: likedBtnConfig)
                     LZUser.shared.user.allLikedMusic.removeAll(where: { $0 == self.music?.id })
@@ -253,7 +261,11 @@ class LZMusicDetailView: TMScalableView {
         playListBtn.setupEvent(config: playListBtnConfig)
         
         controlView.setupUI()
-        controlView.completionHandler = { res in
+        controlView.completionHandler = { [weak self] res in
+            guard let self = self else {
+                return
+            }
+            
             if res == true {
                 self.player.play()
                 self.setTimer(true)
@@ -355,11 +367,19 @@ class LZMusicDetailView: TMScalableView {
         titleLabel.text = music.animeInfo.title
         authorView.text = music.author
         SDWebImageManager.shared.loadImage(with: URL(string: music.animeInfo.logo)) { _, _, _ in
-        } completed: { image, _, _, _, _, _ in
+        } completed: { [weak self] image, _, _, _, _, _ in
+            guard let self = self else {
+                return
+            }
+            
             self.iconView.image = image
         }
         SDWebImageManager.shared.loadImage(with: URL(string: music.animeInfo.bg)) { _, _, _ in
-        } completed: { image, _, _, _, _, _ in
+        } completed: { [weak self] image, _, _, _, _, _ in
+            guard let self = self else {
+                return
+            }
+            
             self.backgroundImageView.image =  image
             self.progressView.progressTintColor = UIColor(patternImage: image ?? UIImage() )
         }
@@ -444,21 +464,37 @@ class LZMusicDetailView: TMScalableView {
     func setupCommandCenter() {
         let commandCenter = MPRemoteCommandCenter.shared()
         
-        commandCenter.playCommand.addTarget { event in
+        commandCenter.playCommand.addTarget { [weak self] event in
+            guard let self = self else {
+                return .commandFailed
+            }
+            
             self.controlView.isPlaying = true
             return .success
         }
         
-        commandCenter.pauseCommand.addTarget { event in
+        commandCenter.pauseCommand.addTarget { [weak self] event in
+            guard let self = self else {
+                return .commandFailed
+            }
+            
             self.controlView.isPlaying = false
             return .success
         }
         
-        commandCenter.nextTrackCommand.addTarget { event in
+        commandCenter.nextTrackCommand.addTarget { [weak self] event in
+            guard let self = self else {
+                return .commandFailed
+            }
+            
             self.switchSong(isForward: true)
             return .success
         }
-        commandCenter.previousTrackCommand.addTarget { event in
+        commandCenter.previousTrackCommand.addTarget { [weak self] event in
+            guard let self = self else {
+                return .commandFailed
+            }
+            
             self.switchSong(isForward: false)
             return .success
         }
@@ -469,22 +505,22 @@ class LZMusicDetailView: TMScalableView {
             
             if let positionEvent = event as? MPChangePlaybackPositionCommandEvent {
                 let position = positionEvent.positionTime
-                setTimer(false)
+                self.setTimer(false)
                 // 计算拖动的进度时间
                 let time = CMTime(seconds: position, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
                 // 设置播放器的当前时间
-                player.seek(to: time)
+                self.player.seek(to: time)
                 
                 // 更新播放进度显示
-                let elapsedPlaybackTime = CMTimeGetSeconds(player.currentTime())
+                let elapsedPlaybackTime = CMTimeGetSeconds(self.player.currentTime())
                 
-                nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = elapsedPlaybackTime
-                nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(player.currentItem?.duration ?? .zero)
-                MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+                self.nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = elapsedPlaybackTime
+                self.nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(self.player.currentItem?.duration ?? .zero)
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = self.nowPlayingInfo
                 
                 print("目前进度 \(position) \(self.player.currentTime().seconds) \(self.player.currentItem?.duration.seconds ?? 0) \(Float(self.player.currentTime().seconds / (self.player.currentItem?.duration.seconds ?? 0)))")
-                updateProgress()
-                setTimer(true)
+                self.updateProgress()
+                self.setTimer(true)
                 return .success
             }
             return .commandFailed

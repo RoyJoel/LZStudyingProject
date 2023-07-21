@@ -34,10 +34,15 @@ class LZSys {
                 return
             }
 
-            reachability?.whenReachable = { _ in
+            reachability?.whenReachable = { [weak self] _ in
+                guard let self = self else {
+                    return
+                }
+                
                 self.auth()
             }
             reachability?.whenUnreachable = { _ in
+                
                 if let userInfo = UserDefaults.standard.data(forKey: LZUDKeys.UserInfo.rawValue) {
                     do {
                         LZUser.shared.user = try PropertyListDecoder().decode(User.self, from: userInfo)

@@ -59,7 +59,10 @@ class LZSettingInfoViewController: UIViewController, UITableViewDelegate, UITabl
         infoVC.completionHandler = { result in
             (self.tableView.cellForRow(at: indexPath) as? LZSettingTableViewCell)?.setupEvent(title: self.titleSettingConfig[indexPath.row], info: result)
         }
-        infoVC.iconCompletionHandler = { icon in
+        infoVC.iconCompletionHandler = { [weak self] icon in
+            guard let self = self else {
+                return
+            }
             (self.tableView.cellForRow(at: indexPath) as? LZSettingUserIconCell)?.setupEvent(title: self.titleSettingConfig[indexPath.row], icon: icon)
         }
         navigationController?.pushViewController(infoVC, animated: true)
@@ -77,12 +80,20 @@ class LZSettingInfoViewController: UIViewController, UITableViewDelegate, UITabl
     @objc func cancel() {
         let sheetCtrl = UIAlertController(title: "取消修改", message: nil, preferredStyle: .alert)
 
-        let action = UIAlertAction(title: "确认", style: .default) { _ in
+        let action = UIAlertAction(title: "确认", style: .default) { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
             self.navigationController?.popViewController(animated: true)
         }
         sheetCtrl.addAction(action)
 
-        let cancelAction = UIAlertAction(title: "取消", style: .default) { _ in
+        let cancelAction = UIAlertAction(title: "取消", style: .default) { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
             sheetCtrl.dismiss(animated: true)
         }
         sheetCtrl.addAction(cancelAction)
@@ -95,8 +106,13 @@ class LZSettingInfoViewController: UIViewController, UITableViewDelegate, UITabl
     @objc func updateUserInfo() {
         let sheetCtrl = UIAlertController(title: "保存修改", message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "确认", style: .default) { _ in
+            
+            
             self.infoVC.getUserInfo()
-            LZUserRequest.updateInfo { user, error in
+            LZUserRequest.updateInfo { [weak self] user, error in
+                guard let self = self else {
+                    return
+                }
                 guard user != nil else {
                     self.view.showToast(with: "更新信息失败")
                     return

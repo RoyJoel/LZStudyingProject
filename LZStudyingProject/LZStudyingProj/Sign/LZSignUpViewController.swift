@@ -299,7 +299,10 @@ class LZSignUpViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         } else if currentIndex == configItems.count - 1 {
             getUserInfo()
-            LZUserRequest.signUp { token, error in
+            LZUserRequest.signUp { [weak self] token, error in
+                guard let self = self else {
+                    return
+                }
                 guard error == nil else {
                     if self.view.window != nil {
                         let toastView = UILabel()

@@ -33,7 +33,11 @@ class LZMusicViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        LZMusicRequest.getAll { music, error in
+        LZMusicRequest.getAll { [weak self] music, error in
+            guard let self = self else {
+                return
+            }
+            
             guard let music = music else {
                 self.view.showToast(with: "音乐信息获取失败")
                 return

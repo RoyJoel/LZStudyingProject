@@ -107,7 +107,11 @@ class LZSettingViewController: UIViewController, UITableViewDelegate, UITableVie
     @objc func signOut() {
         let sheetCtrl = UIAlertController(title: "确定退出登录？", message: nil, preferredStyle: .alert)
 
-        let action = UIAlertAction(title: "确认", style: .default) { _ in
+        let action = UIAlertAction(title: "确认", style: .default) { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
             if let window = self.signOutBtn.window {
                 UserDefaults.standard.set(nil, forKey: LZUDKeys.JSONWebToken.rawValue)
                 UserDefaults.standard.set(nil, forKey: LZUDKeys.UserInfo.rawValue)

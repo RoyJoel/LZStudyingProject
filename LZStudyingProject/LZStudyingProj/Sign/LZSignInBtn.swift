@@ -44,7 +44,10 @@ class LZSignInBtn: UILabel {
         isBouncing = false
         UIView.animate(withDuration: 0.2, animations: {
             self.transform = CGAffineTransform.identity
-        }, completion: { _ in
+        }, completion: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
             self.layer.removeAllAnimations()
         })
     }
